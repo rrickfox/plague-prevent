@@ -9,4 +9,5 @@ public abstract class State : MonoBehaviour
     public int infected;        //How many people are currently infected
     public int cured;           //How many people have been cured
     public int dead;            //How many people have died
+    public int population;      //Total population of the state
 }

@@ -12,6 +12,7 @@ public abstract class Country : MonoBehaviour
     public int infected;        //How many total people are currently infected
     public int cured;           //How many total people have been cured
     public int dead;            //How many total people have died
+    public int population;      //Total population of the country
 
     public List<State> states;  //List of states in the country
 
