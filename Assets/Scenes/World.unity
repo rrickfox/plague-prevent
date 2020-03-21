@@ -185,7 +185,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &24844662
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &343452517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4491,7 +4491,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3
 --- !u!222 &1785082540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4552,6 +4552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa5f3c5c67fc1a47b1fd552fced08f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hea: 0.5
+  inf: 0.25
+  dea: 0.25
   countryName: {fileID: 1949444376}
   world: {fileID: 766795759}
   bar: {fileID: 823368727}
