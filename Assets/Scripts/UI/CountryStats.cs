@@ -39,10 +39,9 @@ public class CountryStats : MonoBehaviour
 
     private void UpdateStats()
     {
-        //if (state == null)
-        //    bar.SetValues(world.healthy / world.population, world.infected / world.population, world.dead / world.population);
-        //else
-        //    bar.SetValues(state.healthy / state.population, state.infected / state.population, state.dead / state.population);
-        bar.SetValues(hea, inf, dea);
+        if (state == null)
+            bar.SetValues(world.healthy / world.population, world.infected / world.population, world.dead / world.population);
+        else
+            bar.SetValues(state.healthy / state.population, state.infected / state.population, state.dead / state.population);
     }
 }
