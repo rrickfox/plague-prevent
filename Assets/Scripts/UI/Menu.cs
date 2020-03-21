@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject diseaseMenu;
+    public GameObject diseaseInfo;
     public GameObject countryMenu;
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class Menu : MonoBehaviour
     {
         mainMenu.SetActive(true);
         diseaseMenu.SetActive(false);
+        diseaseInfo.SetActive(false);
         countryMenu.SetActive(false);
     }
 
@@ -36,6 +38,15 @@ public class Menu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         diseaseMenu.SetActive(true);
+        diseaseInfo.SetActive(false);
+        countryMenu.SetActive(false);
+    }
+
+    public void ToDiseaseInfo()
+    {
+        mainMenu.SetActive(false);
+        diseaseMenu.SetActive(false);
+        diseaseInfo.SetActive(true);
         countryMenu.SetActive(false);
     }
 
@@ -43,6 +54,7 @@ public class Menu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         diseaseMenu.SetActive(false);
+        diseaseInfo.SetActive(false);
         countryMenu.SetActive(true);
     }
 
