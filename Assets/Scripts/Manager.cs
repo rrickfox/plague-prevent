@@ -6,13 +6,8 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject skillTreeUI;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -35,4 +30,19 @@ public class Manager : MonoBehaviour
             }*/
         }
     }
+
+
+    public void ShowSkillTree()
+    {
+        if (skillTreeUI.active)
+        {
+            skillTreeUI.SetActive(false);
+        }
+        else
+        {
+            skillTreeUI.SetActive(true);
+        }
+    }
+
+
 }
