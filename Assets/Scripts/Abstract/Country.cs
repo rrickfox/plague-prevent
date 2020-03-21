@@ -13,15 +13,17 @@ public abstract class Country : MonoBehaviour
     public bool democratic;                                         //Whether the country is democratic or not
     public static Dictionary<string,LawNode> laws;                  //List of law trees that can be enforced
     
-
-    public int icuBeds => states.Sum(s => s.icuBeds);               //How many total ICU Beds there are
     public int startingBudget;                                      //The starting budget for a country
     public int currentBudget;                                       //The current budget for a country
 
-    public int infected => states.Sum(s => s.infected);             //How many total people are currently infected
-    public int cured => states.Sum(s => s.cured);                   //How many total people have been cured
-    public int dead => states.Sum(s => s.dead);                     //How many total people have died
-    public int population => states.Sum(s => s.population);         //Total population of the country
+    public float susceptible => states.Sum(s => s.susceptible);
+    public float exposed => states.Sum(s => s.exposed);
+    public float infected => states.Sum(s => s.infected);
+    public float hospitalized => states.Sum(s => s.hospitalized);
+    public float critical => states.Sum(s => s.critical);
+    public float dead => states.Sum(s => s.dead);
+    public float recovered => states.Sum(s => s.recovered);
+    public float population => states.Sum(s => s.population);         //Total population of the country
 
     public List<State> states;                                      //List of states in the country
 
