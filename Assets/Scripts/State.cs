@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class State
+public class State: MonoBehaviour
 {
-    public string name;                     //Name of the state
+    public string stateName;                //Name of the state
 
     public int icuBeds;                     //How many total ICU Beds there are
 
@@ -13,8 +13,6 @@ public class State
     public int cured;                       //How many people have been cured
     public int dead;                        //How many people have died
     public int population;                  //Total population of the state
-
-    public Transform position;              //Position of state (for infection circle)
 
     public List<State> neighbouring;        //Neighbouring states
 

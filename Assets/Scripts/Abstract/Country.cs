@@ -35,19 +35,20 @@ public abstract class Country : MonoBehaviour
     //Import Laws from json files
     public virtual void ReadLaws()
     {
-        string dir = "E:\\Private\\Programming\\Wir vs Virus\\plague-prevent\\Assets\\Laws";
+        Debug.LogWarning("Please implement proper directory when reading JSON Files!!!");
+        string dir = ".\\Assets\\Laws";
 
         laws = new Dictionary<string, LawNode>();
         
         string[] paths = Directory.GetFiles(dir);
-        Debug.Log(paths);
+        //Debug.Log(paths);
         foreach(string path in paths)
         {
             //If JSON File
             if (path.Split(".".ToCharArray())[path.Split(".".ToCharArray()).Length - 1] == "json")
             {
                 //File Name
-                Debug.Log(path.Split("\\".ToCharArray())[path.Split("\\".ToCharArray()).Length - 1]);
+                //Debug.Log(path.Split("\\".ToCharArray())[path.Split("\\".ToCharArray()).Length - 1]);
 
                 StreamReader file = File.OpenText(path);
                 string text = file.ReadToEnd();                       //Get file contents as string
