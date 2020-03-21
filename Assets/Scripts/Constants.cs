@@ -2,6 +2,5 @@ using UnityEngine;
 
 public static class Constants
 {
-    public static readonly float timeSpeed = 1f;
-    public static readonly float timeScale = 50f * 60f * timeSpeed;
+    public static readonly float timeScale = 24f * 60f * 2f; //days to ticks
 }
