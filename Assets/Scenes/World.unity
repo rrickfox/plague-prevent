@@ -221,7 +221,12 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 2100000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 128344717}
+  - {fileID: 732638911}
+  - {fileID: 459189467}
+  - {fileID: 1148041412}
 --- !u!1 &128344714
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +327,11 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 2200000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 586303675}
+  - {fileID: 732638911}
+  - {fileID: 114923476}
+  - {fileID: 1222791886}
 --- !u!1 &179078138
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +432,8 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 1000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1523248363}
 --- !u!1 &211119501
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +534,10 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 2900000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1276055938}
+  - {fileID: 1222791886}
+  - {fileID: 1225766064}
 --- !u!1 &459189464
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +638,11 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 13000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 740555257}
+  - {fileID: 1148041412}
+  - {fileID: 114923476}
+  - {fileID: 732638911}
 --- !u!1 &586303672
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +743,12 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 2500000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1292760242}
+  - {fileID: 732638911}
+  - {fileID: 128344717}
+  - {fileID: 1222791886}
+  - {fileID: 1225766064}
 --- !u!1 &605924412
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +949,11 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 4000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 459189467}
+  - {fileID: 114923476}
+  - {fileID: 128344717}
+  - {fileID: 586303675}
 --- !u!1 &740555254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1054,10 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 11000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 459189467}
+  - {fileID: 1148041412}
+  - {fileID: 1523248363}
 --- !u!1 &766795757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1243,13 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 6300000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 740555257}
+  - {fileID: 1523248363}
+  - {fileID: 1526182825}
+  - {fileID: 1222791886}
+  - {fileID: 114923476}
+  - {fileID: 459189467}
 --- !u!1 &1222791883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,7 +1350,16 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 8000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1700815585}
+  - {fileID: 1276055938}
+  - {fileID: 211119504}
+  - {fileID: 1225766064}
+  - {fileID: 586303675}
+  - {fileID: 128344717}
+  - {fileID: 114923476}
+  - {fileID: 1148041412}
+  - {fileID: 1526182825}
 --- !u!1 &1225766061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1460,10 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 1600000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 586303675}
+  - {fileID: 1222791886}
+  - {fileID: 211119504}
 --- !u!1 &1276055935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1564,9 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 1800000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 211119504}
 --- !u!1 &1292760239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,7 +1667,8 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 3600000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 586303675}
 --- !u!1 &1523248360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1769,11 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 4000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1526182825}
+  - {fileID: 1148041412}
+  - {fileID: 740555257}
+  - {fileID: 179078141}
 --- !u!1 &1526182822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1874,10 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 18000000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 1148041412}
+  - {fileID: 1523248363}
 --- !u!1 &1700815582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,4 +1978,5 @@ MonoBehaviour:
   cured: 0
   dead: 0
   population: 700000
-  neighbouring: []
+  neighbouring:
+  - {fileID: 1222791886}
