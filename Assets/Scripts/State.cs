@@ -4,7 +4,7 @@ using UnityEngine;
 using static Constants;
 
 [System.Serializable]
-public class State: MonoBehaviour
+public class State : MonoBehaviour
 {
     public string stateName;                //Name of the state
 
@@ -16,6 +16,7 @@ public class State: MonoBehaviour
     public float dead = 0;                  //How many people have died
     public float recovered = 0;             //How many people have recovered from the virus
     public float population;                //Total population of the state
+    public float healthy => (population - dead - infected );
 
     public float susceptibleChange;         //Change in number of not infected people
     public float exposedChange;             //Change in number of exposed people

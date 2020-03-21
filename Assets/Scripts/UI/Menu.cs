@@ -15,9 +15,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainMenu.SetActive(true);
-        diseaseMenu.SetActive(false);
-        countryMenu.SetActive(false);
+        ToMainMenu();
     }
 
     // Update is called once per frame
