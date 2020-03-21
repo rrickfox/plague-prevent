@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8754612319e81647b928b363986902e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countryName: 
+  countryName: Germany
   democratic: 0
   enforcedLaws: []
   startingBudget: 0
@@ -2278,6 +2278,7 @@ MonoBehaviour:
     Hands\",\"satisfaction\":10,\"dampener\":0.10000000149011612,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Verteilen
     von Taschent\xFCchern\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]},{\"law\":{\"name\":\"Verteilen
     von Disinfektionmittel\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]}]}]}"
+  ticks: 0
 --- !u!1 &767808189
 GameObject:
   m_ObjectHideFlags: 0

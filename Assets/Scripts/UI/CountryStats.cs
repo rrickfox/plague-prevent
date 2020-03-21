@@ -6,20 +6,17 @@ using TMPro;
 
 public class CountryStats : MonoBehaviour
 {
-    [Header("Debug")]
-    [Range(0,1)]
-    public float hea;
-    [Range(0,1)]
-    public float inf;
-    [Range(0,1)]
-    public float dea;
-
     public TMP_Text countryName;
     public Country world;
     public Bar bar;
 
     private State state;
-    
+
+    private void Start()
+    {
+        SelectCountry(null);
+        UpdateStats();
+    }
 
     // Update is called once per frame
     void Update()
