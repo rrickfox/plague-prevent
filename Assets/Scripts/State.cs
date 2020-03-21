@@ -85,5 +85,13 @@ public class State: MonoBehaviour
         critical     += criticalChange;
         recovered    += recoveredChange;
         dead         += deadChange;
+
+        susceptible = Mathf.Clamp(susceptible, 0, population);
+        exposed = Mathf.Clamp(exposed, 0, population);
+        infected = Mathf.Clamp(infected, 0, population);
+        hospitalized = Mathf.Clamp(hospitalized, 0, population);
+        critical = Mathf.Clamp(critical, 0, population);
+        recovered = Mathf.Clamp(recovered, 0, population);
+        dead = Mathf.Clamp(dead, 0, population);
     }
 }
