@@ -42,16 +42,12 @@ public abstract class Country : MonoBehaviour
 
         laws = new Dictionary<string, LawNode>();
         
-        string[] paths = Directory.GetFiles(dir);
-        //Debug.Log(paths);
-        foreach(string path in paths)
+        string[] paths = Directory.GetFiles(dir);   //Get Files in path
+        foreach (string path in paths)
         {
             //If JSON File
             if (path.Split(".".ToCharArray())[path.Split(".".ToCharArray()).Length - 1] == "json")
             {
-                //File Name
-                //Debug.Log(path.Split("\\".ToCharArray())[path.Split("\\".ToCharArray()).Length - 1]);
-
                 StreamReader file = File.OpenText(path);
                 string text = file.ReadToEnd();                       //Get file contents as string
                 file.Close();
@@ -61,9 +57,9 @@ public abstract class Country : MonoBehaviour
                 text = text.Replace("\r\n", "");
                 text = text.Replace("            ", "");
                 text = text.Replace("    ", "");
-                //Debug.Log(text);
 
 
+                //File Name
                 string name = path.Split("\\".ToCharArray())[path.Split("\\".ToCharArray()).Length - 1].Split(".".ToCharArray())[0];         //Get file name <name>.json by splitting at .
                 laws.Add(name, JsonUtility.FromJson<LawNode>(text));    //Add law tree into dictionary
             }
