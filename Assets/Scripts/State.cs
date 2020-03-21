@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class State
 {
+    public string name;         //Name of the state
+
     public int icuBeds;         //How many total ICU Beds there are
 
     public int infected;        //How many people are currently infected

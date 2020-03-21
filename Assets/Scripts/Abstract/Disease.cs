@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Disease : MonoBehaviour
 {
-    public string name;                         //Name of the disease
+    public string diseaseName;                  //Name of the disease
     public float infectionRate;                 //How fast the disease spreads
     public enum types {Bacteria, Virus};        //Types of disease
     public types type;                          //Which type this disease is

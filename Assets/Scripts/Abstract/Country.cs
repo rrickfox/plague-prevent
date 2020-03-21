@@ -10,7 +10,7 @@ public abstract class Country : MonoBehaviour
     public string countryName;                                      //Name of the country
 
     public bool democratic;                                         //Whether the country is democratic or not
-    public List<Law> laws = new List<Law>()
+    public List<Law> laws = new List<Law>()                         //List of laws that can be enforced
     {
         new Law("Washing Hands", 10, 0.1f)
     };
