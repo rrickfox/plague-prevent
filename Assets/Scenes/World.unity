@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 785e3856db5e8d34f9e0b8971ddba9bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7e6a2cbd56033446994958aba152c35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -293,7 +293,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b2134e827cf7ce45879ad61d86f03b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87a2e89f9d14e094b91703c1bf9fc49c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -394,7 +394,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67d09d0579eb677429c07c5acec8d22d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d72c1ba2164d984d8a64bf448b85189, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -402,7 +402,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &179078141
@@ -495,7 +495,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcdb006c00d6cdb4f87d913e82935bb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ce5a93de703af3449452117f37e3740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c357e8935d5d5e74b8d2d8d4defad3a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f49173ab324cce9408513a4c5b51870c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -697,7 +697,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e9c4cdefba343f4c93bc2f752ab0df5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baf473052f56cc948a41ea194fe1bcbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -898,7 +898,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bdda7137f584ed4b8f5b40be3fa6e2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82da311a7a46f08429f62b6958323481, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -999,7 +999,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52cc99f325cc9db48874cb9f42113138, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb45829699989a747a261ead12466f4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1092,14 +1092,6 @@ MonoBehaviour:
   democratic: 0
   startingBudget: 0
   currentBudget: 0
-<<<<<<< HEAD
-  states: []
-  neighbours: []
-  json: "{\"law\":{\"name\":\"\",\"satisfaction\":0,\"dampener\":0.0,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Washing
-    Hands\",\"satisfaction\":10,\"dampener\":0.10000000149011612,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Verteilen
-    von Taschent\xFCchern\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]},{\"law\":{\"name\":\"Verteilen
-    von Disinfektionmittel\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]}]}]}"
-=======
   states:
   - {fileID: 1292760242}
   - {fileID: 740555257}
@@ -1118,6 +1110,10 @@ MonoBehaviour:
   - {fileID: 211119504}
   - {fileID: 114923476}
   neighbours: []
+  json: "{\"law\":{\"name\":\"\",\"satisfaction\":0,\"dampener\":0.0,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Washing
+    Hands\",\"satisfaction\":10,\"dampener\":0.10000000149011612,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Verteilen
+    von Taschent\xFCchern\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]},{\"law\":{\"name\":\"Verteilen
+    von Disinfektionmittel\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]}]}]}"
 --- !u!1 &1148041409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af9b0b327b09d8b42a6a325fd15ead7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17909012701ad2842bb6f7009321f605, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1290,7 +1286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 89c7f3f59f00939419310dc5f887e836, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73580f46b19ecbe4a8062422a5494477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1391,7 +1387,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 49478530473c72248a400133bc8c845e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abd475ddef463ae48a87c794b8c0cadb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1492,7 +1488,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b811fd121f28f834cb075adf1c03bb41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59e0aa852eb2beb4eafc026cf8143284, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1593,7 +1589,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 874338cd25998d8408da12d1a44a29d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51dac6032c3f99943a6797144602dff0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1694,7 +1690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 15db771505166774f9f0a373d5bc0ff5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49bfa8dc81bb7544b895b12213b9c161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1795,7 +1791,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ffd73e069c4c9d4e80bf611e5ae2113, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb70ab4fcbd25a74b9bc005e58d5b54d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1896,7 +1892,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a5d80613f8e637449f16d30f856478f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9349ca9729886f84baa9e246ce595426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1926,4 +1922,3 @@ MonoBehaviour:
   dead: 0
   population: 700000
   neighbouring: []
->>>>>>> 0e515d7bdf4585dc286ff03841557ae779231c94
