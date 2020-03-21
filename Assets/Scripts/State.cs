@@ -16,4 +16,21 @@ public class State: MonoBehaviour
 
     public List<State> neighbouring;        //Neighbouring states
 
+    private SpriteRenderer renderer;
+
+    
+
+    public void Start()
+    {
+        renderer = GetComponent<SpriteRenderer>(); 
+    }
+
+    private void Update()
+    {
+        infected += 100;
+        Color inf = Color.Lerp(Color.white, Color.red, (float)infected / (float)population);
+        Color deadC = Color.Lerp(inf, Color.black, (float)dead / (float)population);
+        renderer.color = deadC;
+    }
+
 }
