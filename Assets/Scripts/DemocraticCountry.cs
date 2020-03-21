@@ -9,4 +9,9 @@ public class DemocraticCountry : Country
     {
         throw new System.NotImplementedException();
     }
+
+    private void Start()
+    {
+        ReadLaws();
+    }
 }
