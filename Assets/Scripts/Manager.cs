@@ -6,29 +6,28 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
-    public GameObject skillTreeUI;
+    public bool paused;
+    public bool menu;
+
+    public CountryStats countryStats;
+    public GameObject selectedCountry;
+    public State state;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            Debug.Log(hit.transform.name);
+            if (hit)
+            {
+                selectedCountry = hit.transform.gameObject;
+                state = selectedCountry.GetComponent<State>();
+                countryStats.SelectCountry(state);
+            }
+            else {
+                selectedCountry = null;
+                state = null;
+            }
         }
     }
-
-
-    public void ShowSkillTree()
-    {
-        if (skillTreeUI.active)
-        {
-            skillTreeUI.SetActive(false);
-        }
-        else
-        {
-            skillTreeUI.SetActive(true);
-        }
-    }
-
-
 }

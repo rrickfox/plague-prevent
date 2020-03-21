@@ -25,6 +25,7 @@ public abstract class Country : MonoBehaviour
     public float dead => states.Sum(s => s.dead);
     public float recovered => states.Sum(s => s.recovered);
     public float population => states.Sum(s => s.population);         //Total population of the country
+    public float healthy => states.Sum(s => s.healthy);
 
     public List<State> states;                                      //List of states in the country
 
