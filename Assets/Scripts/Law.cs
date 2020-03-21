@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Law : MonoBehaviour
+public struct Law
 {
-    
+    public string name;             //Name of the law
+    public int satisfaction;        //How happy the civilians are with this law
+    public float dampener;          //Dampening effect of this law on the infection rate of the disease
 }
