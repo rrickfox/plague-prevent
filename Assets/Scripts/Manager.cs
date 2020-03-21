@@ -22,12 +22,12 @@ public class Manager : MonoBehaviour
             {
                 selectedCountry = hit.transform.gameObject;
                 state = selectedCountry.GetComponent<State>();
-                countryStats.SelectCountry(state);
             }
             else {
                 selectedCountry = null;
                 state = null;
             }
+            countryStats.SelectCountry(state);
         }
     }
 }
