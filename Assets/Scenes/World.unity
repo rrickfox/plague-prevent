@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 114923474}
   - component: {fileID: 114923475}
   - component: {fileID: 114923476}
+  - component: {fileID: 114923477}
   m_Layer: 0
   m_Name: "Th\xFCringen"
   m_TagString: Untagged
@@ -216,17 +217,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: "Th\xFCringen"
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 2100000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 128344717}
   - {fileID: 732638911}
   - {fileID: 459189467}
   - {fileID: 1148041412}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &114923477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114923473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &128344714
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +270,7 @@ GameObject:
   - component: {fileID: 128344715}
   - component: {fileID: 128344716}
   - component: {fileID: 128344717}
+  - component: {fileID: 128344718}
   m_Layer: 0
   m_Name: SachsenAnhalt
   m_TagString: Untagged
@@ -322,16 +355,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Sachsen-Anhalt
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 2200000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 586303675}
   - {fileID: 732638911}
   - {fileID: 114923476}
   - {fileID: 1222791886}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &128344718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128344714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &179078138
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +407,7 @@ GameObject:
   - component: {fileID: 179078139}
   - component: {fileID: 179078140}
   - component: {fileID: 179078141}
+  - component: {fileID: 179078142}
   m_Layer: 0
   m_Name: Saarland
   m_TagString: Untagged
@@ -427,13 +492,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Saarland
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 1000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1523248363}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &179078142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179078138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &211119501
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +541,7 @@ GameObject:
   - component: {fileID: 211119502}
   - component: {fileID: 211119503}
   - component: {fileID: 211119504}
+  - component: {fileID: 211119505}
   m_Layer: 0
   m_Name: SchleswigHolstein
   m_TagString: Untagged
@@ -529,15 +626,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Schleswig-Holstein
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 2900000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1276055938}
   - {fileID: 1222791886}
   - {fileID: 1225766064}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &211119505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211119501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &459189464
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +677,7 @@ GameObject:
   - component: {fileID: 459189465}
   - component: {fileID: 459189466}
   - component: {fileID: 459189467}
+  - component: {fileID: 459189468}
   m_Layer: 0
   m_Name: Bayern
   m_TagString: Untagged
@@ -633,16 +762,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Bayern
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 13000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 740555257}
   - {fileID: 1148041412}
   - {fileID: 114923476}
   - {fileID: 732638911}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &459189468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459189464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &586303672
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +814,7 @@ GameObject:
   - component: {fileID: 586303673}
   - component: {fileID: 586303674}
   - component: {fileID: 586303675}
+  - component: {fileID: 586303676}
   m_Layer: 0
   m_Name: Brandenburg
   m_TagString: Untagged
@@ -738,17 +899,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Brandenburg
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 2500000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1292760242}
   - {fileID: 732638911}
   - {fileID: 128344717}
   - {fileID: 1222791886}
   - {fileID: 1225766064}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &586303676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586303672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &605924412
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +1052,7 @@ GameObject:
   - component: {fileID: 732638909}
   - component: {fileID: 732638910}
   - component: {fileID: 732638911}
+  - component: {fileID: 732638912}
   m_Layer: 0
   m_Name: Sachsen
   m_TagString: Untagged
@@ -944,16 +1137,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Sachsen
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 4000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 459189467}
   - {fileID: 114923476}
   - {fileID: 128344717}
   - {fileID: 586303675}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &732638912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732638908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &740555254
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +1189,7 @@ GameObject:
   - component: {fileID: 740555255}
   - component: {fileID: 740555256}
   - component: {fileID: 740555257}
+  - component: {fileID: 740555258}
   m_Layer: 0
   m_Name: "BadenW\xFCrttemberg"
   m_TagString: Untagged
@@ -1049,15 +1274,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: "Baden-W\xFCrttemberg"
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 11000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 459189467}
   - {fileID: 1148041412}
   - {fileID: 1523248363}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &740555258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740555254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &766795757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1399,49 @@ MonoBehaviour:
     Hands\",\"satisfaction\":10,\"dampener\":0.10000000149011612,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Verteilen
     von Taschent\xFCchern\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]},{\"law\":{\"name\":\"Verteilen
     von Disinfektionmittel\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]}]}]}"
+--- !u!1 &767808189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767808191}
+  - component: {fileID: 767808190}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &767808190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767808189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46df2baa402f8c14db4d391f6b50dba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &767808191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767808189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.46322, y: 0.082875825, z: -5.7965374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148041409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1453,7 @@ GameObject:
   - component: {fileID: 1148041410}
   - component: {fileID: 1148041411}
   - component: {fileID: 1148041412}
+  - component: {fileID: 1148041413}
   m_Layer: 0
   m_Name: Hessen
   m_TagString: Untagged
@@ -1238,11 +1538,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Hessen
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 6300000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 740555257}
   - {fileID: 1523248363}
@@ -1250,6 +1560,27 @@ MonoBehaviour:
   - {fileID: 1222791886}
   - {fileID: 114923476}
   - {fileID: 459189467}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1148041413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148041409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1222791883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1592,7 @@ GameObject:
   - component: {fileID: 1222791884}
   - component: {fileID: 1222791885}
   - component: {fileID: 1222791886}
+  - component: {fileID: 1222791887}
   m_Layer: 0
   m_Name: Niedersachsen
   m_TagString: Untagged
@@ -1345,11 +1677,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Niedersachsen
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 8000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1700815585}
   - {fileID: 1276055938}
@@ -1360,6 +1702,27 @@ MonoBehaviour:
   - {fileID: 114923476}
   - {fileID: 1148041412}
   - {fileID: 1526182825}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1222791887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222791883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1225766061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1734,7 @@ GameObject:
   - component: {fileID: 1225766062}
   - component: {fileID: 1225766063}
   - component: {fileID: 1225766064}
+  - component: {fileID: 1225766065}
   m_Layer: 0
   m_Name: MecklenburgVorpommern
   m_TagString: Untagged
@@ -1455,15 +1819,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Mecklenburg-Vorpommern
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 1600000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 586303675}
   - {fileID: 1222791886}
   - {fileID: 211119504}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1225766065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225766061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1276055935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1870,7 @@ GameObject:
   - component: {fileID: 1276055936}
   - component: {fileID: 1276055937}
   - component: {fileID: 1276055938}
+  - component: {fileID: 1276055939}
   m_Layer: 0
   m_Name: Hamburg
   m_TagString: Untagged
@@ -1559,14 +1955,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Hamburg
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 1800000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 211119504}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1276055939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276055935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1292760239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +2005,7 @@ GameObject:
   - component: {fileID: 1292760240}
   - component: {fileID: 1292760241}
   - component: {fileID: 1292760242}
+  - component: {fileID: 1292760243}
   m_Layer: 0
   m_Name: Berlin
   m_TagString: Untagged
@@ -1662,13 +2090,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Berlin
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 3600000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 586303675}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1292760243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292760239}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1523248360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,6 +2139,7 @@ GameObject:
   - component: {fileID: 1523248361}
   - component: {fileID: 1523248362}
   - component: {fileID: 1523248363}
+  - component: {fileID: 1523248364}
   m_Layer: 0
   m_Name: RheinlandPfalz
   m_TagString: Untagged
@@ -1764,16 +2224,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Rheinland-Pfalz
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 4000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1526182825}
   - {fileID: 1148041412}
   - {fileID: 740555257}
   - {fileID: 179078141}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1523248364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523248360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1526182822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +2276,7 @@ GameObject:
   - component: {fileID: 1526182823}
   - component: {fileID: 1526182824}
   - component: {fileID: 1526182825}
+  - component: {fileID: 1526182826}
   m_Layer: 0
   m_Name: NordrheinWestfalen
   m_TagString: Untagged
@@ -1869,15 +2361,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Nordrhein-Westfalen
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 18000000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 1148041412}
   - {fileID: 1523248363}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1526182826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526182822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1700815582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +2412,7 @@ GameObject:
   - component: {fileID: 1700815583}
   - component: {fileID: 1700815584}
   - component: {fileID: 1700815585}
+  - component: {fileID: 1700815586}
   m_Layer: 0
   m_Name: Bremen
   m_TagString: Untagged
@@ -1973,10 +2497,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateName: Bremen
-  icuBeds: 0
+  susceptible: 0
+  exposed: 0
   infected: 0
-  cured: 0
+  hospitalized: 0
+  critical: 0
   dead: 0
+  recovered: 0
   population: 700000
+  susceptibleChange: 0
+  exposedChange: 0
+  infectedChange: 0
+  hospitalizedChange: 0
+  criticalChange: 0
+  deadChange: 0
+  recoveredChange: 0
   neighbouring:
   - {fileID: 1222791886}
+  beta: 1
+  tl: 1
+  ti: 1
+  th: 1
+  tc: 1
+  m: 0.1
+  c: 0.1
+  f: 0.1
+--- !u!65 &1700815586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700815582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.239999, y: 10.239999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
