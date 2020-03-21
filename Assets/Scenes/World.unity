@@ -238,7 +238,9 @@ MonoBehaviour:
   - {fileID: 732638911}
   - {fileID: 459189467}
   - {fileID: 1148041412}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -453,7 +455,9 @@ MonoBehaviour:
   - {fileID: 732638911}
   - {fileID: 114923476}
   - {fileID: 1222791886}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -669,7 +673,9 @@ MonoBehaviour:
   recoveredChange: 0
   neighbouring:
   - {fileID: 1523248363}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -834,7 +840,9 @@ MonoBehaviour:
   - {fileID: 1276055938}
   - {fileID: 1222791886}
   - {fileID: 1225766064}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -1042,7 +1050,9 @@ MonoBehaviour:
   - {fileID: 1148041412}
   - {fileID: 114923476}
   - {fileID: 732638911}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -1312,7 +1322,9 @@ MonoBehaviour:
   - {fileID: 128344717}
   - {fileID: 1222791886}
   - {fileID: 1225766064}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -1765,7 +1777,9 @@ MonoBehaviour:
   - {fileID: 114923476}
   - {fileID: 128344717}
   - {fileID: 586303675}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -1972,7 +1986,9 @@ MonoBehaviour:
   - {fileID: 459189467}
   - {fileID: 1148041412}
   - {fileID: 1523248363}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -2453,7 +2469,9 @@ MonoBehaviour:
   - {fileID: 1222791886}
   - {fileID: 114923476}
   - {fileID: 459189467}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -2742,7 +2760,9 @@ MonoBehaviour:
   - {fileID: 114923476}
   - {fileID: 1148041412}
   - {fileID: 1526182825}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -2997,7 +3017,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 2
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3026,7 +3046,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3167,7 +3187,9 @@ MonoBehaviour:
   - {fileID: 586303675}
   - {fileID: 1222791886}
   - {fileID: 211119504}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -3503,7 +3525,9 @@ MonoBehaviour:
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 211119504}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -3671,7 +3695,9 @@ MonoBehaviour:
   recoveredChange: 0
   neighbouring:
   - {fileID: 586303675}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -3834,7 +3860,9 @@ MonoBehaviour:
   - {fileID: 1148041412}
   - {fileID: 740555257}
   - {fileID: 179078141}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -4043,7 +4071,9 @@ MonoBehaviour:
   - {fileID: 1222791886}
   - {fileID: 1148041412}
   - {fileID: 1523248363}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
@@ -4276,7 +4306,9 @@ MonoBehaviour:
   recoveredChange: 0
   neighbouring:
   - {fileID: 1222791886}
-  beta: 1
+  r0: 2.7
+  isolation: 1
+  mt: 1
   tl: 1
   ti: 1
   th: 1
