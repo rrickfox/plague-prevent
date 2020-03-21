@@ -5,12 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class State
 {
-    public string name;         //Name of the state
+    public string name;                     //Name of the state
 
-    public int icuBeds;         //How many total ICU Beds there are
+    public int icuBeds;                     //How many total ICU Beds there are
 
-    public int infected;        //How many people are currently infected
-    public int cured;           //How many people have been cured
-    public int dead;            //How many people have died
-    public int population;      //Total population of the state
+    public int infected;                    //How many people are currently infected
+    public int cured;                       //How many people have been cured
+    public int dead;                        //How many people have died
+    public int population;                  //Total population of the state
+
+    public Transform position;              //Position of state (for infection circle)
+
+    public List<State> neighbouring;        //Neighbouring states
+
 }
