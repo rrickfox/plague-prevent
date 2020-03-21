@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State : MonoBehaviour
+[System.Serializable]
+public class State
 {
     public int icuBeds;         //How many total ICU Beds there are
 

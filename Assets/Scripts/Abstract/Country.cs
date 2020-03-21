@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Country : MonoBehaviour
 {
+
+    public string countryName;          //Name of the country
+
     public bool democratic;             //Whether the country is democratic or not
     public int icuBeds;                 //How many total ICU Beds there are
     public int startingBudget;          //The starting budget for a country

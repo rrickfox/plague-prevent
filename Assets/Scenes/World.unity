@@ -218,7 +218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 10
-  pressed: 0
+  panPressed: 0
+  maxZoom: 2.5
+  minZoom: 7
 --- !u!1 &1420084312
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,8 +231,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1420084314}
   - component: {fileID: 1420084313}
+  - component: {fileID: 1420084316}
+  - component: {fileID: 1420084315}
   m_Layer: 0
-  m_Name: GermanyMap
+  m_Name: Germany
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,3 +304,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1420084315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420084312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8754612319e81647b928b363986902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countryName: Germany
+  democratic: 1
+  icuBeds: 0
+  startingBudget: 0
+  currentBudget: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 0
+  states:
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  neighbours: []
+--- !u!114 &1420084316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420084312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9364041f95d1da4ea039e9750ff414e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countryName: Germany
+  democratic: 0
+  icuBeds: 0
+  startingBudget: 0
+  currentBudget: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 0
+  states:
+  - icuBeds: 0
+    infected: 0
+    cured: 0
+    dead: 0
+    population: 0
+  neighbours: []
