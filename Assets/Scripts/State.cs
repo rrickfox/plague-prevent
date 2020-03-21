@@ -1,0 +1,12 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class State : MonoBehaviour
+{
+    public int icuBeds;    //How many total ICU Beds there are
+
+    public int infected;        //How many people are currently infected
+    public int cured;           //How many people have been cured
+    public int dead;            //How many people have died
+}
