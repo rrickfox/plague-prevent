@@ -13,5 +13,6 @@ public class DemocraticCountry : Country
     private void Start()
     {
         ReadLaws();
+        //Debug.Log(laws.Count);
     }
 }

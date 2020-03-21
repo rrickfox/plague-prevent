@@ -1,0 +1,37 @@
+{
+  "law": {
+    "name": "",
+    "satisfaction": 0,
+    "dampener": 0.0,
+    "active": false
+  },
+  "subNode": [
+        {
+            "law": {
+                "name": "Hände waschen",
+                "satisfaction": 10,
+                "dampener": 0.1,
+                "active": false
+            },
+            "subNode": []
+        },
+        {
+            "law": {
+                "name": "Verteilen von Taschentüchern",
+                "satisfaction": 1,
+                "dampener": 0.01,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Verteilen von Disinfektionmittel",
+                        "satisfaction": 1,
+                        "dampener": 0.01,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        }
+    ]}
