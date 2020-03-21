@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114923474}
   - component: {fileID: 114923475}
+  - component: {fileID: 114923476}
   m_Layer: 0
   m_Name: "Th\xFCringen"
   m_TagString: Untagged
@@ -191,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 785e3856db5e8d34f9e0b8971ddba9bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7e6a2cbd56033446994958aba152c35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -202,6 +203,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &114923476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114923473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: "Th\xFCringen"
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 2100000
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 128344717}
+  - {fileID: 732638911}
+  - {fileID: 459189467}
+  - {fileID: 1148041412}
 --- !u!1 &128344714
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128344715}
   - component: {fileID: 128344716}
+  - component: {fileID: 128344717}
   m_Layer: 0
   m_Name: SachsenAnhalt
   m_TagString: Untagged
@@ -272,7 +298,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b2134e827cf7ce45879ad61d86f03b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87a2e89f9d14e094b91703c1bf9fc49c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -283,6 +309,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &128344717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128344714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Sachsen-Anhalt
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 2200000
+  neighbouring:
+  - {fileID: 586303675}
+  - {fileID: 732638911}
+  - {fileID: 114923476}
+  - {fileID: 1222791886}
 --- !u!1 &179078138
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179078139}
   - component: {fileID: 179078140}
+  - component: {fileID: 179078141}
   m_Layer: 0
   m_Name: Saarland
   m_TagString: Untagged
@@ -353,7 +403,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67d09d0579eb677429c07c5acec8d22d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d72c1ba2164d984d8a64bf448b85189, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -364,6 +414,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &179078141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179078138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Saarland
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 1000000
+  neighbouring:
+  - {fileID: 1523248363}
 --- !u!1 &211119501
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211119502}
   - component: {fileID: 211119503}
+  - component: {fileID: 211119504}
   m_Layer: 0
   m_Name: SchleswigHolstein
   m_TagString: Untagged
@@ -434,7 +505,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcdb006c00d6cdb4f87d913e82935bb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ce5a93de703af3449452117f37e3740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -445,6 +516,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &211119504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211119501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Schleswig-Holstein
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 2900000
+  neighbouring:
+  - {fileID: 1276055938}
+  - {fileID: 1222791886}
+  - {fileID: 1225766064}
 --- !u!1 &459189464
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459189465}
   - component: {fileID: 459189466}
+  - component: {fileID: 459189467}
   m_Layer: 0
   m_Name: Bayern
   m_TagString: Untagged
@@ -515,7 +609,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c357e8935d5d5e74b8d2d8d4defad3a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f49173ab324cce9408513a4c5b51870c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -526,6 +620,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &459189467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459189464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Bayern
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 13000000
+  neighbouring:
+  - {fileID: 740555257}
+  - {fileID: 1148041412}
+  - {fileID: 114923476}
+  - {fileID: 732638911}
 --- !u!1 &586303672
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586303673}
   - component: {fileID: 586303674}
+  - component: {fileID: 586303675}
   m_Layer: 0
   m_Name: Brandenburg
   m_TagString: Untagged
@@ -596,7 +714,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e9c4cdefba343f4c93bc2f752ab0df5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baf473052f56cc948a41ea194fe1bcbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -607,6 +725,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &586303675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586303672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Brandenburg
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 2500000
+  neighbouring:
+  - {fileID: 1292760242}
+  - {fileID: 732638911}
+  - {fileID: 128344717}
+  - {fileID: 1222791886}
+  - {fileID: 1225766064}
 --- !u!1 &605924412
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 732638909}
   - component: {fileID: 732638910}
+  - component: {fileID: 732638911}
   m_Layer: 0
   m_Name: Sachsen
   m_TagString: Untagged
@@ -777,7 +920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bdda7137f584ed4b8f5b40be3fa6e2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82da311a7a46f08429f62b6958323481, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -788,6 +931,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &732638911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732638908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Sachsen
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 4000000
+  neighbouring:
+  - {fileID: 459189467}
+  - {fileID: 114923476}
+  - {fileID: 128344717}
+  - {fileID: 586303675}
 --- !u!1 &740555254
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740555255}
   - component: {fileID: 740555256}
+  - component: {fileID: 740555257}
   m_Layer: 0
   m_Name: "BadenW\xFCrttemberg"
   m_TagString: Untagged
@@ -858,7 +1025,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52cc99f325cc9db48874cb9f42113138, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb45829699989a747a261ead12466f4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -869,6 +1036,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &740555257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740555254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: "Baden-W\xFCrttemberg"
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 11000000
+  neighbouring:
+  - {fileID: 459189467}
+  - {fileID: 1148041412}
+  - {fileID: 1523248363}
 --- !u!1 &766795757
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +1067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766795758}
+  - component: {fileID: 766795759}
   m_Layer: 0
   m_Name: Germany
   m_TagString: Untagged
@@ -915,6 +1105,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766795759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766795757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8754612319e81647b928b363986902e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countryName: 
+  democratic: 0
+  startingBudget: 0
+  currentBudget: 0
+  states:
+  - {fileID: 1292760242}
+  - {fileID: 740555257}
+  - {fileID: 459189467}
+  - {fileID: 586303675}
+  - {fileID: 1700815585}
+  - {fileID: 1276055938}
+  - {fileID: 1148041412}
+  - {fileID: 1225766064}
+  - {fileID: 1222791886}
+  - {fileID: 1526182825}
+  - {fileID: 1523248363}
+  - {fileID: 179078141}
+  - {fileID: 732638911}
+  - {fileID: 128344717}
+  - {fileID: 211119504}
+  - {fileID: 114923476}
+  neighbours: []
+  json: "{\"law\":{\"name\":\"\",\"satisfaction\":0,\"dampener\":0.0,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Washing
+    Hands\",\"satisfaction\":10,\"dampener\":0.10000000149011612,\"active\":false},\"subNode\":[{\"law\":{\"name\":\"Verteilen
+    von Taschent\xFCchern\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]},{\"law\":{\"name\":\"Verteilen
+    von Disinfektionmittel\",\"satisfaction\":1,\"dampener\":0.009999999776482582,\"active\":false},\"subNode\":[]}]}]}"
 --- !u!1 &1148041409
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +1153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148041410}
   - component: {fileID: 1148041411}
+  - component: {fileID: 1148041412}
   m_Layer: 0
   m_Name: Hessen
   m_TagString: Untagged
@@ -985,7 +1214,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af9b0b327b09d8b42a6a325fd15ead7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17909012701ad2842bb6f7009321f605, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -996,6 +1225,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1148041412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148041409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Hessen
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 6300000
+  neighbouring:
+  - {fileID: 740555257}
+  - {fileID: 1523248363}
+  - {fileID: 1526182825}
+  - {fileID: 1222791886}
+  - {fileID: 114923476}
+  - {fileID: 459189467}
 --- !u!1 &1222791883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222791884}
   - component: {fileID: 1222791885}
+  - component: {fileID: 1222791886}
   m_Layer: 0
   m_Name: Niedersachsen
   m_TagString: Untagged
@@ -1066,7 +1321,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 89c7f3f59f00939419310dc5f887e836, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73580f46b19ecbe4a8062422a5494477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1077,6 +1332,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1222791886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222791883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Niedersachsen
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 8000000
+  neighbouring:
+  - {fileID: 1700815585}
+  - {fileID: 1276055938}
+  - {fileID: 211119504}
+  - {fileID: 1225766064}
+  - {fileID: 586303675}
+  - {fileID: 128344717}
+  - {fileID: 114923476}
+  - {fileID: 1148041412}
+  - {fileID: 1526182825}
 --- !u!1 &1225766061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225766062}
   - component: {fileID: 1225766063}
+  - component: {fileID: 1225766064}
   m_Layer: 0
   m_Name: MecklenburgVorpommern
   m_TagString: Untagged
@@ -1147,7 +1431,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 49478530473c72248a400133bc8c845e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abd475ddef463ae48a87c794b8c0cadb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1158,6 +1442,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1225766064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225766061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Mecklenburg-Vorpommern
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 1600000
+  neighbouring:
+  - {fileID: 586303675}
+  - {fileID: 1222791886}
+  - {fileID: 211119504}
 --- !u!1 &1276055935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276055936}
   - component: {fileID: 1276055937}
+  - component: {fileID: 1276055938}
   m_Layer: 0
   m_Name: Hamburg
   m_TagString: Untagged
@@ -1228,7 +1535,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b811fd121f28f834cb075adf1c03bb41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59e0aa852eb2beb4eafc026cf8143284, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1239,6 +1546,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1276055938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276055935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Hamburg
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 1800000
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 211119504}
 --- !u!1 &1292760239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292760240}
   - component: {fileID: 1292760241}
+  - component: {fileID: 1292760242}
   m_Layer: 0
   m_Name: Berlin
   m_TagString: Untagged
@@ -1309,7 +1638,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 874338cd25998d8408da12d1a44a29d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51dac6032c3f99943a6797144602dff0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1320,6 +1649,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1292760242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292760239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Berlin
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 3600000
+  neighbouring:
+  - {fileID: 586303675}
 --- !u!1 &1523248360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523248361}
   - component: {fileID: 1523248362}
+  - component: {fileID: 1523248363}
   m_Layer: 0
   m_Name: RheinlandPfalz
   m_TagString: Untagged
@@ -1390,7 +1740,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 15db771505166774f9f0a373d5bc0ff5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49bfa8dc81bb7544b895b12213b9c161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1401,6 +1751,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1523248363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523248360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Rheinland-Pfalz
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 4000000
+  neighbouring:
+  - {fileID: 1526182825}
+  - {fileID: 1148041412}
+  - {fileID: 740555257}
+  - {fileID: 179078141}
 --- !u!1 &1526182822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526182823}
   - component: {fileID: 1526182824}
+  - component: {fileID: 1526182825}
   m_Layer: 0
   m_Name: NordrheinWestfalen
   m_TagString: Untagged
@@ -1471,7 +1845,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ffd73e069c4c9d4e80bf611e5ae2113, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb70ab4fcbd25a74b9bc005e58d5b54d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1482,6 +1856,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1526182825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526182822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Nordrhein-Westfalen
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 18000000
+  neighbouring:
+  - {fileID: 1222791886}
+  - {fileID: 1148041412}
+  - {fileID: 1523248363}
 --- !u!1 &1700815582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1700815583}
   - component: {fileID: 1700815584}
+  - component: {fileID: 1700815585}
   m_Layer: 0
   m_Name: Bremen
   m_TagString: Untagged
@@ -1552,7 +1949,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a5d80613f8e637449f16d30f856478f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9349ca9729886f84baa9e246ce595426, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1563,3 +1960,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1700815585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700815582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f1434dd7df584f8aaa363c40775d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateName: Bremen
+  icuBeds: 0
+  infected: 0
+  cured: 0
+  dead: 0
+  population: 700000
+  neighbouring:
+  - {fileID: 1222791886}

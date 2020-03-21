@@ -27,9 +27,17 @@ public class LawNode
     public List<LawNode> subNode = new List<LawNode>();
     public LawNode prev = null;
     
-    public LawNode(Law head)
+    public LawNode(Law head, bool empty = false)
     {
-        law = head;
+        if (!empty)
+        {
+            law = head;
+        }
+        else
+        {
+            law = new Law("none", 0, 0f);
+        }
+        
     }
     
     public LawNode AddTree(LawNode law)

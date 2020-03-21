@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DemocraticCountry : Country
 {
@@ -13,5 +14,7 @@ public class DemocraticCountry : Country
     private void Start()
     {
         ReadLaws();
+
+        Debug.Log("Population: " + states.Sum(s => s.population));
     }
 }
