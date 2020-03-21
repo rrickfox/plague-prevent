@@ -6,6 +6,7 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
     public float ticks = 0f;
+    public float seconds = 0f;
 
     public override void EnforceLaw(Law law)
     {
@@ -22,9 +23,14 @@ public class DemocraticCountry : Country
     private void FixedUpdate()
     {
         ticks++;
-        foreach(var state in states)
-            state.CalculateInfectionRates();
-        Debug.Log("days: " + (ticks / Constants.timeScale));
+        if(ticks == 50)
+        {
+            ticks = 0;
+            seconds++;
+            foreach(var state in states)
+                state.CalculateInfectionRates();
+            Debug.Log("days: " + seconds / Constants.timeScale);
+        }
     }
 
 }
