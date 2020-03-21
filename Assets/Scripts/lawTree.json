@@ -1,0 +1,199 @@
+{ 
+    "Hygiene": [
+        {
+            "law": {
+                "name": "Hände waschen",
+                "satisfaction": 10,
+                "dampener": 0.1,
+                "active": false
+            },
+            "subNode": []
+        },
+        {
+            "law": {
+                "name": "Verteilen von Taschentüchern",
+                "satisfaction": 1,
+                "dampener": 0.01,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Verteilen von Disinfektionmittel",
+                        "satisfaction": 1,
+                        "dampener": 0.01,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        }
+    ],
+    "Quarantäne": [
+        {
+            "law": {
+                "name": "Zuhause",
+                "satisfaction": 10,
+                "dampener": 1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Home Office",
+                        "satisfaction": 1,
+                        "dampener": 1,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        },
+        {
+            "law": {
+                "name": "Infizierte ins Krankenhaus",
+                "satisfaction": 1,
+                "dampener": 1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Infizierte ins Bergwerk",
+                        "satisfaction": 1,
+                        "dampener": 0.5,
+                        "active": false
+                    },
+                    "subNode": []
+                },
+                {
+                    "law": {
+                        "name": "Infizierte auf Kreuzfahrtschiffe",
+                        "satisfaction": 1,
+                        "dampener": 0.3,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        }
+    ],
+    "Versammlungen": [
+        {
+            "law": {
+                "name": "Schließen von Flughäfen",
+                "satisfaction": 0.1,
+                "dampener": 1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Schließen großer öffentlicher Plätze",
+                        "satisfaction": 0.2,
+                        "dampener": 1,
+                        "active": false
+                    },
+                    "subNode": []
+                },
+                {
+                    "law": {
+                        "name": "Schulschließungen",
+                        "satisfaction": 1,
+                        "dampener": 0.5,
+                        "active": false
+                    },
+                    "subNode": []
+                },
+                {
+                    "law": {
+                        "name": "Grenzschließungen",
+                        "satisfaction": 1,
+                        "dampener": 1,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        },
+        {
+            "law": {
+                "name": "Versammlungen über 100 Personen verbieten",
+                "satisfaction": 0.5,
+                "dampener": 2,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Versammlungen über 50 Personen verbieten",
+                        "satisfaction": 0.5,
+                        "dampener": 1,
+                        "active": false
+                    },
+                    "subNode": [
+                        {
+                            "law": {
+                                "name": "Versammlungen über 10 Personen verbieten",
+                                "satisfaction": 0.5,
+                                "dampener": 0.5,
+                                "active": false
+                            },
+                            "subNode": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Ausgangssperren": [
+        {
+            "law": {
+                "name": "Öffnungszeiten von Läden kürzen",
+                "satisfaction": 0.5,
+                "dampener": 0.1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Alle nicht notwendigen Läden schließen",
+                        "satisfaction": 0.2,
+                        "dampener": 0.1,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        },
+        {
+            "law": {
+                "name": "Appell zu Hause zu bleiben",
+                "satisfaction": 0.2,
+                "dampener": 0.2,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Personen müssen bis 19 Uhr Zuhause sein",
+                        "satisfaction": 0.5,
+                        "dampener": 0.5,
+                        "active": false
+                    },
+                    "subNode": [
+                        {
+                            "law": {
+                                "name": "Komplette Ausgangssperre",
+                                "satisfaction": 0.1,
+                                "dampener": 1,
+                                "active": false
+                            },
+                            "subNode": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
