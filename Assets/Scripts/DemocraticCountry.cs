@@ -13,15 +13,13 @@ public class DemocraticCountry : Country
 
     private void Start()
     {
-        ReadLaws();
+        //ReadLaws();
 
-        Debug.Log("Population: " + states.Sum(s => s.population));
+        Debug.Log("Population: " + population);
     }
 
     private void FixedUpdate()
     {
-        // secpertick * 50 * 60 * 2 = 60 * 60 * 24
-        // 14.4 seconds per tick
         foreach(var state in states)
             state.CalculateInfectionRates();
     }

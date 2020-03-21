@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Constants;
 
 [System.Serializable]
 public class State: MonoBehaviour
 {
     public string stateName;                //Name of the state
 
-    public float susceptible = 0;
+    public float susceptible = 0;           //how many people are susceptible to the disease
     public float exposed = 0;               //How many people are infected but don't show symptoms
     public float infected = 0;              //How many people are currently infected
     public float hospitalized = 0;          //How many people have been hospitalized
@@ -34,7 +35,7 @@ public class State: MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         susceptible = population - 1;
-        exposed = 1;
+        infected = 1;
     }
 
     private void Update()
@@ -45,18 +46,23 @@ public class State: MonoBehaviour
         renderer.color = deadC;
     }
 
-    public float beta = 1;                  //transmission rate
-    public float tl = 1;                    //latency time from infection to infectiousness
-    public float ti = 1;                    //time an individual is infectious after which he/she recoveres of falls severely ill
-    public float th = 1;                    //time a sick person recovers or deteriorates into a critical state
-    public float tc = 1;                    //time a person remains critical before dying or stabilizing
-    public float m = 0.1f;                  //fraction of infectious that are asymptomatic or mild
-    public float c = 0.1f;                  //fraction of severe cases that turn critical
-    public float f = 0.1f;                  //fraction of critical cases that are fatal
+    public float beta => (r0 * isolation * mt) / ti; //transmission rate
+    public float r0 = 2.7f;                 //secondary infections, range 2-3
+    public float isolation = 1f;             //degree to which people are isolated from the population
+    public float mt = 1f;                    //time course of mitigation measures
+    public float tl = 5f * timeScale;        //latency time from infection to infectiousness
+    public float ti = 3f * timeScale;        //time an individual is infectious after which he/she recovers of falls severely ill
+    public float th = 4f * timeScale;        //time a sick person recovers or deteriorates into a critical state
+    public float tc = 14f * timeScale;       //time a person remains critical before dying or stabilizing
+    public float m = 0.05f;                 //fraction of infectious that are asymptomatic or mild
+    public float c = 0.01f;                 //fraction of severe cases that turn critical
+    public float f = 0.3f;                  //fraction of critical cases that are fatal
 
     // https://neherlab.org/covid19/about
     public void CalculateInfectionRates()
     {
+        Debug.Log("State: " + stateName + ", timeScale: " + timeScale + ", beta: " + beta + ", population: " + population);
+        Debug.Log("tl: " + tl + ", ti: " + ti + ", th: " + th + ", tc: " + tc);
         susceptibleChange  = -beta * susceptible * infected;
         exposedChange      = beta * susceptible * infected - exposed / tl;
         infectedChange     = exposed / tl - infected / ti;
@@ -64,6 +70,13 @@ public class State: MonoBehaviour
         criticalChange     = c * hospitalized / th - critical / tc;
         recoveredChange    = m * infected / ti + (1 - c) * hospitalized / th;
         deadChange         = f * critical / tc;
+        Debug.Log("susceptible: " + susceptible + ", susceptibleChange: " + susceptibleChange);
+        Debug.Log("exposed: " + exposed + ", exposedChange: " + exposedChange);
+        Debug.Log("infected: " + infected + ", infectedChange: " + infectedChange);
+        Debug.Log("hospitalized: " + hospitalized + ", hospitalizedChange: " + hospitalizedChange);
+        Debug.Log("critical: " + critical + ", criticalChange: " + criticalChange);
+        Debug.Log("recovered: " + recovered + ", recoveredChange: " + recoveredChange);
+        Debug.Log("dead: " + dead + ", deadChange: " + deadChange);
 
         susceptible  += susceptibleChange;
         exposed      += exposedChange;
