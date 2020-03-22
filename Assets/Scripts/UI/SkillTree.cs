@@ -41,7 +41,9 @@ public class SkillTree : MonoBehaviour
         manager = FindObjectOfType<Manager>();
 
         //Automatically load hygiene
+        currentNode = "Hände waschen";
         LoadSkillTree("Hygiene");
+        UpdateSelected(currentNode);
     }
 
     public void LoadSkillTree(string name)
@@ -77,6 +79,7 @@ public class SkillTree : MonoBehaviour
 
     }
 
+    //Recursive function that locates a child LawNode from a parent LawNode
     private LawNode GetNode(LawNode parent, string name)
     {
         //Break out of recursion
@@ -120,6 +123,12 @@ public class SkillTree : MonoBehaviour
             nodeG.GetComponent<Image>().color = Color.gray;
         }
 
+        //If active law
+        if (node.law.active)
+        {
+            nodeG.GetComponent<Image>().color = Color.cyan;
+        }
+
 
         foreach (LawNode subNode in node.subNode)                                        //Call function for each subnode
         {
@@ -147,7 +156,7 @@ public class SkillTree : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && manager.menu)
         {
 
             //Code from https://gamedev.stackexchange.com/questions/93592/graphics-raycaster-of-unity-how-does-it-work
@@ -174,26 +183,24 @@ public class SkillTree : MonoBehaviour
             {
                
                 currentNode = results[0].gameObject.name;
-
-                LawNode selectedNode = GetNode(Country.laws[currentBranch], currentNode);
-
-                //Debug.Log(selectedNode.law.name);
-
-                massnahmeName.text = selectedNode.law.name;
-                massnhameBesch.text = selectedNode.law.description;
-
+                UpdateSelected(currentNode);
             }
 
-            
-
-            
-
-            
         }
 
 
     }
 
+
+    public void UpdateSelected(string name)
+    {
+        //Searches for node with selected name
+        LawNode selectedNode = GetNode(Country.laws[currentBranch], currentNode);
+
+        //Updates the TMPro text elements
+        massnahmeName.text = selectedNode.law.name;
+        massnhameBesch.text = selectedNode.law.description;
+    }
 
 
 }
