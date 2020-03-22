@@ -9,13 +9,15 @@ public struct Law
     public int satisfaction;        //How happy the civilians are with this law
     public float dampener;          //Dampening effect of this law on the infection rate of the disease
     public bool active;             //Whether the law is active
+    public string description;      //A description of the law
 
-    public Law(string name, int satisfaction, float dampener, bool active=false)
+    public Law(string name, int satisfaction, float dampener, string description, bool active=false)
     {
         this.name = name;
         this.satisfaction = satisfaction;
         this.dampener = dampener;
         this.active = active;
+        this.description = description;
     }
 }
 
@@ -36,7 +38,7 @@ public class LawNode
         }
         else
         {
-            law = new Law("none", 0, 0f);
+            law = new Law("none", 0, 0f, "", true);
         }
         
     }
@@ -58,6 +60,8 @@ public class LawNode
         return this;
     }
 
+
+    //Fixes issue where prev doesnt get restored when converting from json back to LawNode
     public void UpdatePrev()
     {
         foreach(LawNode node in subNode)

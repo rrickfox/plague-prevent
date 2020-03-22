@@ -3,7 +3,8 @@
     "name": "",
     "satisfaction": 0,
     "dampener": 0.0,
-    "active": false
+    "active": true,
+	"description": ""
   },
   "subNode": [
         {
@@ -11,7 +12,8 @@
                 "name": "Hände waschen",
                 "satisfaction": 10,
                 "dampener": 0.1,
-                "active": false
+                "active": false,
+				"description": "Die Regierung empfiehlt das häufigere Händewaschen."
             },
             "subNode": []
         },
@@ -20,7 +22,8 @@
                 "name": "Verteilen von Taschentüchern",
                 "satisfaction": 1,
                 "dampener": 0.01,
-                "active": false
+                "active": false,
+				"description": "Die Regierung verteilt Taschentüchern, um die Ausbreitung der Krankheit zu verhindern."
             },
             "subNode": [
                 {
@@ -28,7 +31,8 @@
                         "name": "Verteilen von Disinfektionmittel",
                         "satisfaction": 1,
                         "dampener": 0.01,
-                        "active": false
+                        "active": false,
+						"description": "Die Regierung verteilt Händedesinfektionsmittel, um die Ausbreitung der Krankheit zu verhindern."
                     },
                     "subNode": []
                 }
