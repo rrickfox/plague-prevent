@@ -16,7 +16,6 @@ public class State : MonoBehaviour
     public float dead = 0;                  //How many people have died
     public float recovered = 0;             //How many people have recovered from the virus
     public float population;                //Total population of the state
-    public float healthy => susceptible + recovered;
 
     public float susceptibleChange;         //Change in number of not infected people
     public float exposedChange;             //Change in number of exposed people
@@ -28,6 +27,9 @@ public class State : MonoBehaviour
 
     public List<State> neighbouring;        //Neighbouring states
 
+    public float infectedThreshold = 0.5f;
+    public float deadThreshold = 0.1f;
+
     private SpriteRenderer renderer;
 
     
@@ -35,25 +37,24 @@ public class State : MonoBehaviour
     public void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
-        susceptible = population - 1;
-        infected = 1;
+        susceptible = population;
     }
 
     private void Update()
     {
         //Copyright JP
-        Color inf = Color.Lerp(Color.white, Color.red, (float)infected / (float)population);
-        Color deadC = Color.Lerp(inf, Color.black, (float)dead / (float)population);
+        Color inf = Color.Lerp(Color.white, Color.red, infected / (population * infectedThreshold));
+        Color deadC = Color.Lerp(inf, Color.black, dead / (population * deadThreshold));
         renderer.color = deadC;
     }
 
     public float beta => (r0 * isolation * mt) / ti; //transmission rate
     public float r0 = 2.7f;                 //secondary infections, range 2-3
-    public float isolation = 1f;            //degree to which people are isolated from the population
+    public float isolation = 0.1f;          //degree to which people are isolated from the population
     public float mt => 1f;                  //time course of mitigation measures
     public float tl => 3f * timeScale;      //latency time from infection to infectiousness
-    public float ti => 14f * timeScale;      //time an individual is infectious after which he/she recovers of falls severely ill
-    public float th => 17f * timeScale;      //time a sick person recovers or deteriorates into a critical state
+    public float ti => 14f * timeScale;     //time an individual is infectious after which he/she recovers or falls severely ill
+    public float th => 17f * timeScale;     //time a sick person recovers or deteriorates into a critical state
     public float tc => 21f * timeScale;     //time a person remains critical before dying or stabilizing
     public float m => 0.80f;                //fraction of infectious that are asymptomatic or mild
     public float c => 0.15f;                //fraction of severe cases that turn critical
@@ -78,12 +79,20 @@ public class State : MonoBehaviour
         recovered    += recoveredChange;
         dead         += deadChange;
 
-        susceptible = Mathf.Clamp(susceptible, 0, population);
-        exposed = Mathf.Clamp(exposed, 0, population);
-        infected = Mathf.Clamp(infected, 0, population);
+        susceptible  = Mathf.Clamp(susceptible, 0, population);
+        exposed      = Mathf.Clamp(exposed, 0, population);
+        infected     = Mathf.Clamp(infected, 0, population);
         hospitalized = Mathf.Clamp(hospitalized, 0, population);
-        critical = Mathf.Clamp(critical, 0, population);
-        recovered = Mathf.Clamp(recovered, 0, population);
-        dead = Mathf.Clamp(dead, 0, population);
+        critical     = Mathf.Clamp(critical, 0, population);
+        recovered    = Mathf.Clamp(recovered, 0, population);
+        dead         = Mathf.Clamp(dead, 0, population);
+    }
+
+    public void Infect()
+    {
+        if(infected == 0)
+            Debug.LogWarning(stateName + " was Infected!");
+        susceptible -= 1;
+        infected += 1;
     }
 }

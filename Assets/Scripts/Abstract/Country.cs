@@ -26,14 +26,14 @@ public abstract class Country : MonoBehaviour
     public float dead => states.Sum(s => s.dead);
     public float recovered => states.Sum(s => s.recovered);
     public float population => states.Sum(s => s.population);         //Total population of the country
-    public float healthy => states.Sum(s => s.healthy);
 
 
 
     public float ticks = 0f;
     public float seconds = 0f;
-
-
+    public System.Random random = new System.Random();
+    public float chanceOfInfectedToTravel = 0.001f;
+    public float chanceOfTravellerToInfect = 0.5f;
 
 
 
@@ -110,15 +110,15 @@ public abstract class Country : MonoBehaviour
             seconds++;
             foreach (var state in states)
                 state.CalculateInfectionRates();
-            //Debug.Log("days: " + seconds / Constants.timeScale);
-            daysText.text = string.Format("Tag: {0}", seconds / Constants.timeScale);
-            /*Debug.Log("susceptible: " + susceptible);
-            Debug.Log("exposed: " + exposed);
-            Debug.Log("infected: " + infected);
-            Debug.Log("hospitalized: " + hospitalized);
-            Debug.Log("critical: " + critical);
-            Debug.Log("recovered: " + recovered);
-            Debug.Log("dead: " + dead);*/
+            
+            foreach(var state in states)
+            {
+                if(random.NextDouble() <= state.infected * chanceOfInfectedToTravel * chanceOfTravellerToInfect)
+                {
+                    state.neighbouring[random.Next(state.neighbouring.Count)].Infect();
+                }
+            }
+            daysText.text = string.Format("Tag: {0}", Mathf.Floor(seconds / Constants.timeScale));
         }
     }
 }
