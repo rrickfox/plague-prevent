@@ -89,8 +89,11 @@ public class State : MonoBehaviour
 
     public void Infect()
     {
-        if(infected == 0)
+        if (infected == 0)
+        {
             Debug.LogWarning(stateName + " was Infected!");
+            PopupManager.Instance.Popup(new InfectedNews(stateName));
+        }
         susceptible -= 1;
         infected += 1;
     }
