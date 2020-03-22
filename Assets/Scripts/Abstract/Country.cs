@@ -10,6 +10,7 @@ public abstract class Country : MonoBehaviour
     public IDisease disease;
 
     public string countryName;                                      //Name of the country
+    public Graph graph;
 
     public bool democratic;                                         //Whether the country is democratic or not
     public static Dictionary<string,LawNode> laws;                  //List of law trees that can be enforced
@@ -135,6 +136,8 @@ public abstract class Country : MonoBehaviour
             infectedHistory.Add(exposed + infected + hospitalized + critical);
             recoveredHistory.Add(recovered);
             deadHistory.Add(dead);
+
+            graph.UpdateLines();
         }
     }
 }
