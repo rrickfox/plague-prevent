@@ -58,7 +58,7 @@ public class DemocraticCountry : Country
 
     private void FixedUpdate()
     {
-        UpdateTick();
+        UpdateTick(disease);
     }
 
 }
