@@ -28,6 +28,10 @@ public class SkillTree : MonoBehaviour
 
     public Transform actionMenu;                                                        //To set parent to panel
 
+    public Color enforcedColor = Color.gray;                                                 //Colour of hexagon thats
+    public Color enforcableColor = Color.white;
+    public Color lockedColor = Color.gray;
+
     public void Start()
     {
 
@@ -138,19 +142,19 @@ public class SkillTree : MonoBehaviour
         //Check if previous Node is unlocked, otherwise lock
         if (Enforces(node.law.name) == -1 && node.prev.law.name != "")//(!country.enforcedLaws.Contains(node.law) && node.prev.law.name != "")
         {
-            nodeG.GetComponent<Image>().color = Color.gray;
+            nodeG.GetComponent<Image>().color = lockedColor;
         }
         //Previous is unlocked -> set to white
         if (Enforces(node.prev.law.name) != -1)//(country.enforcedLaws.Contains(node.prev.law))
         {
-            nodeG.GetComponent<Image>().color = Color.white;
+            nodeG.GetComponent<Image>().color =enforcableColor;
         }
 
 
         //If active law
         if (Enforces(node.law.name) != -1)//(country.enforcedLaws.Contains(node.law))
         {
-            nodeG.GetComponent<Image>().color = Color.cyan;
+            nodeG.GetComponent<Image>().color = enforcedColor;
         }
 
 
@@ -213,6 +217,12 @@ public class SkillTree : MonoBehaviour
         }
 
 
+        if (country.enforcingLaw)
+        {
+            einfuehrenButton.interactable = false;
+        }
+
+
     }
 
 
@@ -240,7 +250,12 @@ public class SkillTree : MonoBehaviour
             einfuehrenButton.interactable = true;
         }
 
-        
+
+        if (country.enforcingLaw)
+        {
+            einfuehrenButton.interactable = false;
+        }
+
     }
 
 
@@ -254,9 +269,12 @@ public class SkillTree : MonoBehaviour
         //Visually enable all subnodes
         foreach(LawNode node in GetNode(Country.laws[currentBranch], currentNode).subNode)
         {
-            GameObject.Find(node.law.name).GetComponent<Image>().color = Color.white;
+            GameObject.Find(node.law.name).GetComponent<Image>().color = enforcableColor;
         }
-        
+
+        GameObject.Find(GetNode(Country.laws[currentBranch], currentNode).law.name).GetComponent<Image>().color = enforcedColor;
+
+
     }
 
 }
