@@ -15,7 +15,7 @@ public class DemocraticCountry : Country
 
     private void Start()
     {
-        //ReadLaws();
+        ReadLaws();
 
         Debug.Log("Population: " + population);
     }

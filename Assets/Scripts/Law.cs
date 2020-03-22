@@ -23,8 +23,9 @@ public struct Law
 [System.Serializable]
 public class LawNode
 {
-    public Law law;
-    public List<LawNode> subNode = new List<LawNode>();
+    public Law law;                                             //The Law head node of this tree
+    public int childIndex;                                      //Index in parents subNode list
+    public List<LawNode> subNode = new List<LawNode>();         //List of sub trees
     public LawNode prev = null;
     
     public LawNode(Law head, bool empty = false)
@@ -39,13 +40,49 @@ public class LawNode
         }
         
     }
-    
+
+    public void SetChildIndex(int index)
+    {
+        childIndex = index;
+    }
+    public void SetPrev(LawNode previous)
+    {
+        prev = previous;
+    }
     public LawNode AddTree(LawNode law)
     {
-        law.prev = this;
+        law.SetPrev(this);
+        law.SetChildIndex(subNode.Count);
         subNode.Add(law);
 
         return this;
     }
 
+    public void UpdatePrev()
+    {
+        foreach(LawNode node in subNode)
+        {
+            node.SetPrev(this);
+            node.UpdatePrev();
+        }
+    }
+
+
+    //Must run UpdatePrev before this function
+    public void UpdateChildIndex()
+    {
+        foreach (LawNode node in subNode)
+        {
+            int index;
+            for(index =0; index < node.prev.subNode.Count; index++)
+            {
+                if(node.prev.subNode[index] == node)
+                {
+                    break;
+                }
+            }
+            node.SetChildIndex(index);
+            node.UpdateChildIndex();
+        }
+    }
 }

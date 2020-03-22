@@ -63,20 +63,23 @@ public abstract class Country : MonoBehaviour
 
                 //File Name
                 string name = path.Split("\\".ToCharArray())[path.Split("\\".ToCharArray()).Length - 1].Split(".".ToCharArray())[0];         //Get file name <name>.json by splitting at .
-                laws.Add(name, JsonUtility.FromJson<LawNode>(text));    //Add law tree into dictionary
+                LawNode node = JsonUtility.FromJson<LawNode>(text);                                                                         //Convert json to LawNode object   
+                node.UpdatePrev();                                                                                                          //Adds missing previous attribute to nodes
+                node.UpdateChildIndex();
+                laws.Add(name, node);    //Add law tree into dictionary
             }
 
         }
         Debug.Log(laws["Hygiene"].subNode[0].law.name);
         /// DEBUG ZONE  ///
         //Debug.Log(laws);
-        //LawNode test = new LawNode(new Law("Washing Hands", 10, 0.1f),true).AddTree(new LawNode(new Law("Washing Hands", 10, 0.1f))).subNode[0].AddTree(new LawNode(new Law("Verteilen von Taschentüchern",1,0.01f))).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).prev;
+        LawNode test = new LawNode(new Law("Washing Hands", 10, 0.1f),true).AddTree(new LawNode(new Law("Washing Hands", 10, 0.1f))).subNode[0].AddTree(new LawNode(new Law("Verteilen von Taschentüchern",1,0.01f))).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).prev;
         //List<LawNode> test = new List<LawNode>() { new LawNode(new Law("Washing Hands", 10, 0.1f)), new LawNode(new Law("Verteilen von Taschentüchern", 10, 0.1f)).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).AddTree(new LawNode(new Law("Oiiiii", 1, 0.01f))) };
 
-        /*string temp = JsonUtility.ToJson(test);
+        string temp = JsonUtility.ToJson(test);
         Debug.Log(temp);
         LawNode tmp = JsonUtility.FromJson<LawNode>(temp);
-        Debug.Log(tmp.subNode[0].law.name);*/
+        Debug.Log(tmp.subNode[0].law.name);
         //Debug.Log(test.subNode[0].subNode[0].law.name);
         //LawNode temp = JsonUtility.FromJson<LawNode>();
     }
