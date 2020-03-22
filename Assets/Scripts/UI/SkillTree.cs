@@ -260,7 +260,7 @@ public class SkillTree : MonoBehaviour
         //Updates the TMPro text elements
         actionName.text = selectedNode.law.name;
         actionDescription.text = selectedNode.law.description;
-        actionCost.text = string.Format("Kosten: {0}", selectedNode.law.cost);
+        actionCost.text = string.Format("Kosten: {0}€", selectedNode.law.cost);
 
         //If enforced button should be disabled
         if(Enforces(selectedNode.law.name) != -1)

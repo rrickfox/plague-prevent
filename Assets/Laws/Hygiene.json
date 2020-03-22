@@ -13,7 +13,8 @@
                 "satisfaction": 10,
                 "dampener": 0.1,
                 "active": false,
-				"description": "Die Regierung empfiehlt das häufigere Händewaschen."
+				"description": "Die Regierung empfiehlt das häufigere Händewaschen.",
+				"cost": 100000
             },
             "subNode": []
         },
@@ -23,7 +24,9 @@
                 "satisfaction": 1,
                 "dampener": 0.01,
                 "active": false,
-				"description": "Die Regierung verteilt Taschentüchern, um die Ausbreitung der Krankheit zu verhindern."
+				"description": "Die Regierung verteilt Taschentüchern, um die Ausbreitung der Krankheit zu verhindern.",
+				"cost": 100000,
+				"r0Dampener": 1.5
             },
             "subNode": [
                 {

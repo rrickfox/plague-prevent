@@ -17,6 +17,8 @@ public abstract class Country : MonoBehaviour
     
     public int startingBudget;                                      //The starting budget for a country
     public int currentBudget;                                       //The current budget for a country
+    public float satisfaction=1f;                                   //How happy the general population is
+
 
     public float susceptible => states.Sum(s => s.susceptible);
     public float exposed => states.Sum(s => s.exposed);
@@ -119,6 +121,12 @@ public abstract class Country : MonoBehaviour
                 }
             }
             daysText.text = string.Format("Tag: {0}", Mathf.Floor(seconds / (Constants.timeScale * 2f)));
+
+
+            currentBudget += (int)(satisfaction * (population / 1000f));
+
+            //Debug.Log(string.Format("Current Budget: {0}", (Constants.timeScale * 2f)));
+
         }
     }
 }

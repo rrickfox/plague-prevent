@@ -46,7 +46,7 @@ public class DemocraticCountry : Country
 
     private void Start()
     {
-        
+        currentBudget = startingBudget;
         //Debug.Log("Population: " + population);
         var randomStateIndex = random.Next(states.Count);
         Debug.Log("Bundesland mit erstem Infiziertem: " + states[randomStateIndex].stateName);
