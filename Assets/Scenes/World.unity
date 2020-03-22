@@ -4860,9 +4860,9 @@ MonoBehaviour:
   graph: {fileID: 155722308}
   democratic: 1
   enforcedLaws: []
-  startingBudget: 3000000
+  startingBudget: 1500000
   currentBudget: 0
-  satisfaction: 1
+  satisfaction: 100
   susceptibleHistory: []
   infectedHistory:
   - 0

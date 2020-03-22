@@ -129,6 +129,8 @@ public abstract class Country : MonoBehaviour
 
 
             currentBudget += (int)(satisfaction * (population / 1000000f));
+            satisfaction -= 1f;
+            satisfaction = Mathf.Clamp(satisfaction, 0f, Mathf.Infinity);
 
             //Debug.Log(string.Format("Current Budget: {0}", (Constants.timeScale * 2f)));
 

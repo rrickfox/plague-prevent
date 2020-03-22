@@ -10,7 +10,7 @@ public class DemocraticCountry : Country
     {
         enforcingLaw = true;
         //Pick random satisfaction between two values
-        float satisfaction = Random.Range((100f-law.satisfaction)/ 2f, (100f-law.satisfaction));
+        float satisfaction = Random.Range((100f-law.satisfaction)/ (2f * this.satisfaction / 100f), (100f-law.satisfaction)/(this.satisfaction/100f));
         float count = 0;
 
         law.active = true;
@@ -27,7 +27,7 @@ public class DemocraticCountry : Country
         disease.r0 -= law.r0Dampener;
         disease.isolation -= law.isolationDampener;
         disease.mt -= law.mtDampener;
-        satisfaction += law.satisfaction/10;
+        this.satisfaction += law.satisfaction;
         enforcingLaw = false;
     }
 
