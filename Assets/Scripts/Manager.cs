@@ -24,8 +24,13 @@ public class Manager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit)
             {
-                selectedCountry = hit.transform.gameObject;
-                state = selectedCountry.GetComponent<State>();
+                if (selectedCountry == hit.transform.gameObject)
+                    SetFocus(selectedCountry);
+                else
+                {
+                    selectedCountry = hit.transform.gameObject;
+                    state = selectedCountry.GetComponent<State>();
+                }
             }
             else {
                 selectedCountry = null;
@@ -34,5 +39,17 @@ public class Manager : MonoBehaviour
             countryStats.SelectState(state);
             sideStats.SelectState(state);
         }
+    }
+
+    public void SetFocus(GameObject state)
+    {
+        var collider = state.GetComponent<PolygonCollider2D>();
+        var center = new Vector2();
+        foreach (var p in collider.points)
+        {
+            center += p;
+        }
+        center /= collider.points.Length;
+        Camera.main.transform.position = new Vector3(center.x, center.y, Camera.main.transform.position.z);
     }
 }
