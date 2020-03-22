@@ -123,7 +123,7 @@ public abstract class Country : MonoBehaviour
             daysText.text = string.Format("Tag: {0}", Mathf.Floor(seconds / (Constants.timeScale * 2f)));
 
 
-            currentBudget += (int)(satisfaction * (population / 1000f));
+            currentBudget += (int)(satisfaction * (population / 1000000f));
 
             //Debug.Log(string.Format("Current Budget: {0}", (Constants.timeScale * 2f)));
 

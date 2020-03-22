@@ -543,13 +543,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 128344717}
@@ -760,13 +753,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 586303675}
   - {fileID: 732638911}
@@ -921,12 +907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b92d82611dd60a429baa7aa71eacf24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world: {fileID: 766795759}
-  state: {fileID: 0}
-  susceptible: {fileID: 2012847166}
-  infected: {fileID: 1494701979}
-  recovered: {fileID: 1510475379}
-  dead: {fileID: 1340889955}
 --- !u!1 &177245531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,13 +1070,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1523248363}
   infectedThreshold: 0.5
@@ -1383,13 +1356,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1276055938}
   - {fileID: 1222791886}
@@ -2204,13 +2170,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 740555257}
   - {fileID: 1148041412}
@@ -2704,13 +2663,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1292760242}
   - {fileID: 732638911}
@@ -3291,13 +3243,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 459189467}
   - {fileID: 114923476}
@@ -3699,13 +3644,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 459189467}
   - {fileID: 1148041412}
@@ -3888,15 +3826,9 @@ MonoBehaviour:
   countryName: Deutschland
   democratic: 0
   enforcedLaws: []
-  startingBudget: 0
+  startingBudget: 3000000
   currentBudget: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
+  satisfaction: 1
   ticks: 0
   seconds: 0
   chanceOfInfectedToTravel: 0.001
@@ -3959,7 +3891,6 @@ MonoBehaviour:
   menu: 0
   countryStats: {fileID: 1797363585}
   sideStats: {fileID: 1881871159}
-  graph: {fileID: 155722308}
   selectedCountry: {fileID: 0}
   state: {fileID: 0}
 --- !u!4 &767808191
@@ -4760,10 +4691,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
+  m_fontSize: 25
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 12
   m_fontSizeMax: 25
   m_fontStyle: 0
@@ -5988,13 +5919,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 740555257}
   - {fileID: 1523248363}
@@ -6432,13 +6356,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1700815585}
   - {fileID: 1276055938}
@@ -6864,13 +6781,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 586303675}
   - {fileID: 1222791886}
@@ -7234,13 +7144,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 211119504}
@@ -7404,13 +7307,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 586303675}
   infectedThreshold: 0.5
@@ -8552,13 +8448,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1526182825}
   - {fileID: 1148041412}
@@ -8840,13 +8729,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1222791886}
   - {fileID: 1148041412}
@@ -9999,13 +9881,6 @@ MonoBehaviour:
   criticalChange: 0
   deadChange: 0
   recoveredChange: 0
-  susceptibleHistory: []
-  infectedHistory:
-  - 0
-  recoveredHistory:
-  - 0
-  deadHistory:
-  - 0
   neighbouring:
   - {fileID: 1222791886}
   infectedThreshold: 0.5
@@ -10582,7 +10457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.399994, y: -32.600006}
+  m_AnchoredPosition: {x: -6.4000244, y: -32.600006}
   m_SizeDelta: {x: 193.6, y: -94}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1881871159
@@ -10920,7 +10795,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

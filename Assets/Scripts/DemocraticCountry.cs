@@ -10,7 +10,7 @@ public class DemocraticCountry : Country
     {
         enforcingLaw = true;
         //Pick random satisfaction between two values
-        float satisfaction = Random.Range(law.satisfaction / 2f, law.satisfaction);
+        float satisfaction = Random.Range((100f-law.satisfaction)/ 2f, (100f-law.satisfaction));
         float count = 0;
 
         law.active = true;
@@ -21,13 +21,13 @@ public class DemocraticCountry : Country
             count += 1;
             lawEnforcementProgress = count / (satisfaction*100f);
             //Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, lawEnforcementProgress * 100f));
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.001f);
         }
 
         disease.r0 -= law.r0Dampener;
         disease.isolation -= law.isolationDampener;
         disease.mt -= law.mtDampener;
-
+        satisfaction += law.satisfaction/10;
         enforcingLaw = false;
     }
 
