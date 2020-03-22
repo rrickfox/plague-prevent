@@ -9,73 +9,72 @@
   "subNode": [
     {
       "law": {
-        "name": "Zuhause",
-        "satisfaction": 15,
-        "isolationDampener": 0.2,
-        "r0Dampener": 0.0,
-        "mtDampener": 0.1,
+        "name": "Fahrrad fahren",
+        "satisfaction": 60,
+        "isolationDampener": 0.0,
+        "r0Dampener": 0.2,
+        "mtDampener": 0.0,
         "active": false,
-        "description": "Es wird von der Regierung empfohlen, dass Zivilisten zu Hause bleiben.",
-        "cost": 1000000
+        "description": "Die Regierung empfiehlt das Radfahren, um den öffentlichen Verkehr zu minimieren.",
+        "cost": 10000
       },
       "subNode": [
-        {
-          "law": {
-            "name": "Home Office",
-            "satisfaction": 45,
-            "isolationDampener": 0.01,
-            "r0Dampener": 0.1,
-            "mtDampener": 0.05,
-            "active": false,
-            "description": "Es wird von der Regierung empfohlen, dass Zivilisten von zu Hause aus arbeiten.",
-            "cost": 2000000
-          },
-          "subNode": [
-            
-          ]
-        }
       ]
     },
     {
       "law": {
-        "name": "Infizierte ins Krankenhaus",
-        "satisfaction": 80,
-        "isolationDampener": 0.1,
-        "r0Dampener": 0.2,
-        "mtDampener": 0.03,
+        "name": "Bessere Lebensmittelversorgung",
+        "satisfaction": 70,
+        "isolationDampener": 0.0,
+        "r0Dampener": 0.0,
+        "mtDampener": 0.00,
         "active": false,
-        "description": "Infizierte Zivilisten werden zur weiteren Behandlung ins Krankenhaus gebracht.",
-        "cost": 1000000
+        "description": "Supermärkte sind schneller auf Lager.",
+        "cost": 500000
       },
       "subNode": [
         {
           "law": {
-            "name": "Infizierte ins Bergwerk",
-            "satisfaction": 13,
-            "isolationDampener": 0.2,
-            "r0Dampener": 0.1,
-            "mtDampener": 0.1,
+            "name": "Bessere Obst- und Gemüseversorgung",
+            "satisfaction": 80,
+            "isolationDampener": 0.0,
+            "r0Dampener": 0.3,
+            "mtDampener": 0.0,
             "active": false,
-            "description": "Infizierte Zivilisten werden ins Bergwerk geschickt, um die Infektion zu verringern",
-            "cost": 100000
+            "description": "Stärkt das Immunsystem der Bevölkerung.",
+            "cost": 200000
           },
           "subNode": [
-            
-          ]
-        },
-        {
-          "law": {
-            "name": "Infizierte auf Kreuzfahrtschiffe",
-            "satisfaction": 60,
-            "isolationDampener": 0.2,
-            "r0Dampener": 0.0,
-            "mtDampener": 0.1,
-            "active": false,
-            "description": "Infizierte Zivilisten werden auf Kreuzfahrtschiffe geschickt, um die Infektion zu verringern.",
-            "cost": 100000
-          },
-          "subNode": [
-            
+            {
+              "law": {
+                "name": "Riesiger Nachschub an Toilettenpapier",
+                "satisfaction": 99,
+                "isolationDampener": 0.0,
+                "r0Dampener": 0.0,
+                "mtDampener": 0.0,
+                "active": false,
+                "description": "Toilettenpapier wird in allen Supermärkten nachgefüllt.",
+                "cost": 1000000
+              },
+              "subNode": [
+                
+              ]
+            },
+            {
+              "law": {
+                "name": "Riesiger Nachschub an Nudeln",
+                "satisfaction": 99,
+                "isolationDampener": 0.0,
+                "r0Dampener": 0.0,
+                "mtDampener": 0.0,
+                "active": false,
+                "description": "Nudeln werden in allen Supermärkten nachgefüllt.",
+                "cost": 1000000
+              },
+              "subNode": [
+                
+              ]
+            }
           ]
         }
       ]
