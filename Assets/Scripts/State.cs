@@ -62,8 +62,8 @@ public class State : MonoBehaviour
     // https://neherlab.org/covid19/about
     public void CalculateInfectionRates()
     {
-        Debug.Log("State: " + stateName + ", timeScale: " + timeScale + ", beta: " + beta + ", population: " + population);
-        Debug.Log("tl: " + tl + ", ti: " + ti + ", th: " + th + ", tc: " + tc);
+        /*Debug.Log("State: " + stateName + ", timeScale: " + timeScale + ", beta: " + beta + ", population: " + population);
+        Debug.Log("tl: " + tl + ", ti: " + ti + ", th: " + th + ", tc: " + tc);*/
         susceptibleChange  = -beta * susceptible * infected;
         exposedChange      = beta * susceptible * infected - exposed / tl;
         infectedChange     = exposed / tl - infected / ti;
@@ -71,13 +71,13 @@ public class State : MonoBehaviour
         criticalChange     = c * hospitalized / th - critical / tc;
         recoveredChange    = m * infected / ti + (1 - c) * hospitalized / th;
         deadChange         = f * critical / tc;
-        Debug.Log("susceptible: " + susceptible + ", susceptibleChange: " + susceptibleChange);
+        /*Debug.Log("susceptible: " + susceptible + ", susceptibleChange: " + susceptibleChange);
         Debug.Log("exposed: " + exposed + ", exposedChange: " + exposedChange);
         Debug.Log("infected: " + infected + ", infectedChange: " + infectedChange);
         Debug.Log("hospitalized: " + hospitalized + ", hospitalizedChange: " + hospitalizedChange);
         Debug.Log("critical: " + critical + ", criticalChange: " + criticalChange);
         Debug.Log("recovered: " + recovered + ", recoveredChange: " + recoveredChange);
-        Debug.Log("dead: " + dead + ", deadChange: " + deadChange);
+        Debug.Log("dead: " + dead + ", deadChange: " + deadChange);*/
 
         susceptible  += susceptibleChange;
         exposed      += exposedChange;
