@@ -14,10 +14,10 @@ public class SkillTree : MonoBehaviour
 
     public void LoadSkillTree()
     {
-        spriteDim = hexagon.GetComponent<SpriteRenderer>().size*5.5f;
+        spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
         pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
 
-        //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
+        Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries
         country = GameObject.FindObjectOfType<Country>();
@@ -45,9 +45,9 @@ public class SkillTree : MonoBehaviour
         //Debug.Log(string.Format("Name: {0}, ChildIndex: {1}, Previous: {2}", node.law.name, node.childIndex, node.prev.law.name));
 
         //Offset to left, right or top
-        Vector2[] offsets = new Vector2[3] {(-Mathf.Cos(150f*Mathf.Deg2Rad)*Vector2.left + Mathf.Sin(150f * Mathf.Deg2Rad) * Vector2.up)*spriteDim.y*pixelsPerUnit/2f,
-        (Mathf.Cos(150f * Mathf.Deg2Rad) * Vector2.left + Mathf.Sin(150f * Mathf.Deg2Rad) * Vector2.up)*spriteDim.y*pixelsPerUnit/2f,
-        Vector2.up * (spriteDim.y/2f) * pixelsPerUnit};
+        Vector2[] offsets = new Vector2[3] { (-Mathf.Cos(150f * Mathf.Deg2Rad) * Vector2.left + Mathf.Sin(150f * Mathf.Deg2Rad) * Vector2.up) * spriteDim.y,
+        (Mathf.Cos(150f * Mathf.Deg2Rad) * Vector2.left + Mathf.Sin(150f * Mathf.Deg2Rad) * Vector2.up)* spriteDim.y,
+        Vector2.up * spriteDim.y };
 
         GameObject nodeG = Instantiate(hexagon, position, Quaternion.identity);         //Create Hexagon object
         nodeG.name = node.law.name;

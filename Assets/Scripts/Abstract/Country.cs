@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.IO;
+using TMPro;
 
 public abstract class Country : MonoBehaviour
 {
@@ -26,6 +27,18 @@ public abstract class Country : MonoBehaviour
     public float recovered => states.Sum(s => s.recovered);
     public float population => states.Sum(s => s.population);         //Total population of the country
     public float healthy => states.Sum(s => s.healthy);
+
+
+
+    public float ticks = 0f;
+    public float seconds = 0f;
+
+
+
+
+
+
+
 
     public List<State> states;                                      //List of states in the country
 
@@ -70,18 +83,42 @@ public abstract class Country : MonoBehaviour
             }
 
         }
-        Debug.Log(laws["Hygiene"].subNode[0].law.name);
+        //Debug.Log(laws["Hygiene"].subNode[0].law.name);
         /// DEBUG ZONE  ///
         //Debug.Log(laws);
-        LawNode test = new LawNode(new Law("Washing Hands", 10, 0.1f),true).AddTree(new LawNode(new Law("Washing Hands", 10, 0.1f))).subNode[0].AddTree(new LawNode(new Law("Verteilen von Taschentüchern",1,0.01f))).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).prev;
+        //LawNode test = new LawNode(new Law("Washing Hands", 10, 0.1f),true).AddTree(new LawNode(new Law("Washing Hands", 10, 0.1f))).subNode[0].AddTree(new LawNode(new Law("Verteilen von Taschentüchern",1,0.01f))).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).prev;
         //List<LawNode> test = new List<LawNode>() { new LawNode(new Law("Washing Hands", 10, 0.1f)), new LawNode(new Law("Verteilen von Taschentüchern", 10, 0.1f)).AddTree(new LawNode(new Law("Verteilen von Disinfektionmittel", 1, 0.01f))).AddTree(new LawNode(new Law("Oiiiii", 1, 0.01f))) };
 
-        string temp = JsonUtility.ToJson(test);
+        /*string temp = JsonUtility.ToJson(test);
         Debug.Log(temp);
         LawNode tmp = JsonUtility.FromJson<LawNode>(temp);
-        Debug.Log(tmp.subNode[0].law.name);
+        Debug.Log(tmp.subNode[0].law.name);*/
         //Debug.Log(test.subNode[0].subNode[0].law.name);
         //LawNode temp = JsonUtility.FromJson<LawNode>();
     }
 
+
+    public TextMeshProUGUI daysText;
+
+
+    public virtual void UpdateTick()
+    {
+        ticks++;
+        if (ticks == 50)
+        {
+            ticks = 0;
+            seconds++;
+            foreach (var state in states)
+                state.CalculateInfectionRates();
+            //Debug.Log("days: " + seconds / Constants.timeScale);
+            daysText.text = string.Format("Tag: {0}", seconds / Constants.timeScale);
+            /*Debug.Log("susceptible: " + susceptible);
+            Debug.Log("exposed: " + exposed);
+            Debug.Log("infected: " + infected);
+            Debug.Log("hospitalized: " + hospitalized);
+            Debug.Log("critical: " + critical);
+            Debug.Log("recovered: " + recovered);
+            Debug.Log("dead: " + dead);*/
+        }
+    }
 }
