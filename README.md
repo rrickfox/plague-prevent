@@ -11,4 +11,5 @@ Es besteht die Möglichkeit, das Programm komplett Barrierefrei zu gestalten, di
 - Nadim Adham
 - Richard Fuchs
 - Jean-Pasqual Sindermann
+
 Alle 17, Schüler des Herder-Gymnasiums in Berlin
