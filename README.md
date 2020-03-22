@@ -12,4 +12,4 @@ Es besteht die Möglichkeit, das Programm komplett Barrierefrei zu gestalten, di
 - Richard Fuchs
 - Jean-Pasqual Sindermann
 
-Alle 17, Schüler des Herder-Gymnasiums in Berlin
+Alle 17 Jahre und Schüler des Herder-Gymnasiums in Berlin
