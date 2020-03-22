@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class SkillTree : MonoBehaviour
 {
@@ -10,36 +13,45 @@ public class SkillTree : MonoBehaviour
 
     public Dictionary<Law, GameObject> laws = new Dictionary<Law, GameObject>();        //
 
-    public Country country;
+    public Country country;                                                             //Your country
 
-    private Manager manager;
+    private Manager manager;                                                            //To know when the game is paused etc.
 
-    public string currentString;                                                        //Current selected Law branch
+    public string currentBranch;                                                        //Current selected Law branch
+    public string currentNode;                                                          //Current selected Law node
+
+    //UI Params
+    public TextMeshProUGUI massnahmeName;
+    public TextMeshProUGUI massnhameBesch;
 
 
     public void Start()
     {
+
         //Fetch Sprite data
         spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
         pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries
-        country = GameObject.FindObjectOfType<Country>();
+        country = FindObjectOfType<Country>();
 
+        country.ReadLaws();
 
-        manager = GetComponent<Manager>();
+        manager = FindObjectOfType<Manager>();
 
         //Automatically load hygiene
+        currentNode = "Hände waschen";
         LoadSkillTree("Hygiene");
+        UpdateSelected(currentNode);
     }
 
     public void LoadSkillTree(string name)
     {
         //If it finds a loaded skill tree it destroys it
-        if (GameObject.Find(currentString) && name != currentString)
+        if (GameObject.Find(currentBranch) && name != currentBranch)
         {
-            Destroy(GameObject.Find(currentString));
+            Destroy(GameObject.Find(currentBranch));
         }
         //If it can't already find the object it creates a new one
         if (!GameObject.Find(name))
@@ -61,12 +73,35 @@ public class SkillTree : MonoBehaviour
                 CreateNode(node, origin- offset* count, g.transform);
                 count++;
             }
-            currentString = name;
+            currentBranch = name;
         }
 
 
     }
 
+    //Recursive function that locates a child LawNode from a parent LawNode
+    private LawNode GetNode(LawNode parent, string name)
+    {
+        //Break out of recursion
+        if (parent.law.name == name)
+        {
+            return parent;
+        }
+        LawNode toReturn = null;
+        foreach(LawNode node in parent.subNode)
+        {
+            LawNode temp = GetNode(node, name);
+            if(temp != null && temp.law.name == name)
+            {
+                toReturn = temp;
+            }
+        }
+        return toReturn;
+    }
+
+
+
+    //Recursive function that creates the node gameobject from a LawNode
     private void CreateNode(LawNode node, Vector2 position, Transform parent)
     {
         //Debug.Log(string.Format("Name: {0}, ChildIndex: {1}, Previous: {2}", node.law.name, node.childIndex, node.prev.law.name));
@@ -79,8 +114,23 @@ public class SkillTree : MonoBehaviour
         GameObject nodeG = Instantiate(hexagon, position, Quaternion.identity);         //Create Hexagon object
         nodeG.name = node.law.name;
         nodeG.SetActive(true);
+        nodeG.layer = 8;
         nodeG.transform.SetParent(parent, false);
-        foreach(LawNode subNode in node.subNode)                                        //Call function for each subnode
+
+        //Check if previous Node is unlocked, otherwise lock
+        if (node.prev.law.active == false)
+        {
+            nodeG.GetComponent<Image>().color = Color.gray;
+        }
+
+        //If active law
+        if (node.law.active)
+        {
+            nodeG.GetComponent<Image>().color = Color.cyan;
+        }
+
+
+        foreach (LawNode subNode in node.subNode)                                        //Call function for each subnode
         {
             //Different cases, check notebook (Progyo)
             
@@ -102,10 +152,55 @@ public class SkillTree : MonoBehaviour
         {
             float xMov = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity * 100f;
             float yMove = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity * 100f;
-            GameObject.Find(currentString).transform.position += new Vector3(xMov, yMove);
+            GameObject.Find(currentBranch).transform.position += new Vector3(xMov, yMove);
         }
+
+
+        if (Input.GetMouseButtonDown(0) && manager.menu)
+        {
+
+            //Code from https://gamedev.stackexchange.com/questions/93592/graphics-raycaster-of-unity-how-does-it-work
+
+            //Code to be place in a MonoBehaviour with a GraphicRaycaster component
+            GraphicRaycaster gr = GetComponent<GraphicRaycaster>();
+            //Create the PointerEventData with null for the EventSystem
+            PointerEventData ped = new PointerEventData(null);
+            //Set required parameters, in this case, mouse position
+            ped.position = Input.mousePosition;
+            //Create list to receive all results
+            List<RaycastResult> results = new List<RaycastResult>();
+            //Raycast it
+            gr.Raycast(ped, results);
+
+            if (results[0].gameObject.GetComponent<Button>())
+            {
+                //Code from https://stackoverflow.com/questions/49321922/unity-raycast-ui-button-and-call-its-on-click-event
+                IPointerClickHandler clickHandler = results[0].gameObject.GetComponent<IPointerClickHandler>();
+                PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+                clickHandler.OnPointerClick(pointerEventData);
+            }
+            else if(results[0].gameObject.layer == 8)
+            {
+               
+                currentNode = results[0].gameObject.name;
+                UpdateSelected(currentNode);
+            }
+
+        }
+
+
     }
 
+
+    public void UpdateSelected(string name)
+    {
+        //Searches for node with selected name
+        LawNode selectedNode = GetNode(Country.laws[currentBranch], currentNode);
+
+        //Updates the TMPro text elements
+        massnahmeName.text = selectedNode.law.name;
+        massnhameBesch.text = selectedNode.law.description;
+    }
 
 
 }
