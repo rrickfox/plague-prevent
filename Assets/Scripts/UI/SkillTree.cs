@@ -21,9 +21,9 @@ public class SkillTree : MonoBehaviour
     public string currentNode;                                                          //Current selected Law node
 
     //UI Params
-    public TextMeshProUGUI massnahmeName;
-    public TextMeshProUGUI massnhameBesch;
-    public Button einfuehrenButton;                                            
+    public TextMeshProUGUI actionName;
+    public TextMeshProUGUI actionDescription;
+    public Button enforceButton;                                            
 
 
     public Transform actionMenu;                                                        //To set parent to panel
@@ -219,7 +219,7 @@ public class SkillTree : MonoBehaviour
 
         if (country.enforcingLaw)
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
 
 
@@ -232,28 +232,28 @@ public class SkillTree : MonoBehaviour
         LawNode selectedNode = GetNode(Country.laws[currentBranch], currentNode);
 
         //Updates the TMPro text elements
-        massnahmeName.text = selectedNode.law.name;
-        massnhameBesch.text = selectedNode.law.description;
+        actionName.text = selectedNode.law.name;
+        actionDescription.text = selectedNode.law.description;
 
         //If enforced button should be disabled
         if(Enforces(selectedNode.law.name) != -1)
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
         //If previous is not enforced it should be disabled
         else if (Enforces(selectedNode.prev.law.name) == -1 && selectedNode.prev.law.name != "")
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
         else
         {
-            einfuehrenButton.interactable = true;
+            enforceButton.interactable = true;
         }
 
 
         if (country.enforcingLaw)
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
 
     }
