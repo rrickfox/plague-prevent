@@ -16,7 +16,7 @@ public class State : MonoBehaviour
     public float dead = 0;                  //How many people have died
     public float recovered = 0;             //How many people have recovered from the virus
     public float population;                //Total population of the state
-    public float healthy => (population - dead - infected );
+    public float healthy => susceptible + recovered;
 
     public float susceptibleChange;         //Change in number of not infected people
     public float exposedChange;             //Change in number of exposed people
@@ -51,33 +51,24 @@ public class State : MonoBehaviour
     public float r0 = 2.7f;                 //secondary infections, range 2-3
     public float isolation = 1f;            //degree to which people are isolated from the population
     public float mt => 1f;                  //time course of mitigation measures
-    public float tl => 5f * timeScale;      //latency time from infection to infectiousness
-    public float ti => 3f * timeScale;      //time an individual is infectious after which he/she recovers of falls severely ill
-    public float th => 4f * timeScale;      //time a sick person recovers or deteriorates into a critical state
-    public float tc => 14f * timeScale;     //time a person remains critical before dying or stabilizing
-    public float m => 0.05f;                //fraction of infectious that are asymptomatic or mild
-    public float c => 0.01f;                //fraction of severe cases that turn critical
+    public float tl => 3f * timeScale;      //latency time from infection to infectiousness
+    public float ti => 14f * timeScale;      //time an individual is infectious after which he/she recovers of falls severely ill
+    public float th => 17f * timeScale;      //time a sick person recovers or deteriorates into a critical state
+    public float tc => 21f * timeScale;     //time a person remains critical before dying or stabilizing
+    public float m => 0.80f;                //fraction of infectious that are asymptomatic or mild
+    public float c => 0.15f;                //fraction of severe cases that turn critical
     public float f => 0.3f;                 //fraction of critical cases that are fatal
 
     // https://neherlab.org/covid19/about
     public void CalculateInfectionRates()
     {
-        Debug.Log("State: " + stateName + ", timeScale: " + timeScale + ", beta: " + beta + ", population: " + population);
-        Debug.Log("tl: " + tl + ", ti: " + ti + ", th: " + th + ", tc: " + tc);
-        susceptibleChange  = -beta * susceptible * infected;
-        exposedChange      = beta * susceptible * infected - exposed / tl;
+        susceptibleChange  = -beta * susceptible * infected / population;
+        exposedChange      = beta * susceptible * infected / population - exposed / tl;
         infectedChange     = exposed / tl - infected / ti;
         hospitalizedChange = (1 - m) * infected / ti + (1 - f) * critical / tc - hospitalized / th;
         criticalChange     = c * hospitalized / th - critical / tc;
         recoveredChange    = m * infected / ti + (1 - c) * hospitalized / th;
         deadChange         = f * critical / tc;
-        Debug.Log("susceptible: " + susceptible + ", susceptibleChange: " + susceptibleChange);
-        Debug.Log("exposed: " + exposed + ", exposedChange: " + exposedChange);
-        Debug.Log("infected: " + infected + ", infectedChange: " + infectedChange);
-        Debug.Log("hospitalized: " + hospitalized + ", hospitalizedChange: " + hospitalizedChange);
-        Debug.Log("critical: " + critical + ", criticalChange: " + criticalChange);
-        Debug.Log("recovered: " + recovered + ", recoveredChange: " + recoveredChange);
-        Debug.Log("dead: " + dead + ", deadChange: " + deadChange);
 
         susceptible  += susceptibleChange;
         exposed      += exposedChange;

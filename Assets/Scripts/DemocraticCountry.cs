@@ -30,6 +30,13 @@ public class DemocraticCountry : Country
             foreach(var state in states)
                 state.CalculateInfectionRates();
             Debug.Log("days: " + seconds / Constants.timeScale);
+            Debug.Log("susceptible: " + susceptible);
+            Debug.Log("exposed: " + exposed);
+            Debug.Log("infected: " + infected);
+            Debug.Log("hospitalized: " + hospitalized);
+            Debug.Log("critical: " + critical);
+            Debug.Log("recovered: " + recovered);
+            Debug.Log("dead: " + dead);
         }
     }
 
