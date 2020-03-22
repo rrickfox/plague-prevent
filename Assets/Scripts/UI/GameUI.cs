@@ -12,12 +12,9 @@ public class GameUI : MonoBehaviour
     public GameObject actionsMenu;
     public GameObject statisticsMenu;
 
-    private Manager manager;
-
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.FindObjectOfType<Manager>();
         ToGameUI();
     }
 
@@ -34,8 +31,8 @@ public class GameUI : MonoBehaviour
         settingsMenu.SetActive(false);
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
-        manager.menu = false;
-        manager.action = false;
+        Manager.Instance.menu = false;
+        Manager.Instance.action = false;
     }
 
     public void ToPauseMenu()
@@ -45,8 +42,8 @@ public class GameUI : MonoBehaviour
         settingsMenu.SetActive(false);
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
-        manager.menu = true;
-        manager.action = false;
+        Manager.Instance.menu = true;
+        Manager.Instance.action = false;
     }
 
     public void ToSettingsMenu()
@@ -56,8 +53,8 @@ public class GameUI : MonoBehaviour
         settingsMenu.SetActive(true);
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
-        manager.menu = true;
-        manager.action = false;
+        Manager.Instance.menu = true;
+        Manager.Instance.action = false;
     }
 
     public void ToActionsMenu()
@@ -67,8 +64,8 @@ public class GameUI : MonoBehaviour
         settingsMenu.SetActive(false);
         actionsMenu.SetActive(true);
         statisticsMenu.SetActive(false);
-        manager.menu = false;
-        manager.action = true;
+        Manager.Instance.menu = false;
+        Manager.Instance.action = true;
     }
 
     public void ToStatisticsMenu()
@@ -78,8 +75,8 @@ public class GameUI : MonoBehaviour
         settingsMenu.SetActive(false);
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(true);
-        manager.menu = false;
-        manager.action = false;
+        Manager.Instance.menu = false;
+        Manager.Instance.action = false;
     }
 
     public void QuitGame()
