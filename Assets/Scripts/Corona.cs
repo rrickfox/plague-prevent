@@ -5,7 +5,7 @@ public class Corona : IDisease
     public string diseaseName { get; } = "Covid-19";
 
     public float beta => (r0 * isolation * mt) / ti; //transmission rate
-    public float r0 { get; set; } = 5.0f;                 //secondary infections, range 2-3
+    public float r0 { get; set; } = 50.0f;                 //secondary infections, range 2-3
     public float isolation { get; set; } = 1f;            //degree to which people are isolated from the population
     public float mt { get; set; } = 1f;                   //time course of mitigation measures
     public float tl => 2f * timeScale;      //latency time from infection to infectiousness
