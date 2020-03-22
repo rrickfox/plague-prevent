@@ -82,8 +82,8 @@ public class SkillTree : MonoBehaviour
 
             //Debug.Log(Country.laws[name].subNode.Count - 1);
 
-            Vector2 origin = Vector2.up * Screen.height *3f/ (2f* Country.laws[name].subNode.Count * 4f);   //Top of the screen
-            Vector2 offset = Vector2.up * (Screen.height /((Country.laws[name].subNode.Count-1)*4f));   //Increments in symetrical steps so that each tree is spaced evenly
+            Vector2 origin = Vector2.up * (Screen.height/2f-200f);   //Top of the screen
+            Vector2 offset = Vector2.up * (Screen.height /((Country.laws[name].subNode.Count+1)));   //Increments in symetrical steps so that each tree is spaced evenly
             int count = 0;
             //Ignore root node and only create nodes starting from the second layer
             foreach (LawNode node in Country.laws[name].subNode)
