@@ -25,6 +25,11 @@ public class State : MonoBehaviour
     public float deadChange;                //Change in deaths
     public float recoveredChange;           //Change in number of recovered people
 
+    public List<float> susceptibleHistory = new List<float>();
+    public List<float> infectedHistory = new List<float>(){0};
+    public List<float> recoveredHistory = new List<float>(){0};
+    public List<float> deadHistory = new List<float>(){0};
+
     public List<State> neighbouring;        //Neighbouring states
 
     public float infectedThreshold = 0.5f;
@@ -38,6 +43,7 @@ public class State : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         susceptible = population;
+        susceptibleHistory.Add(susceptible);
     }
 
     private void Update()
@@ -74,6 +80,11 @@ public class State : MonoBehaviour
         critical     = Mathf.Clamp(critical, 0, population);
         recovered    = Mathf.Clamp(recovered, 0, population);
         dead         = Mathf.Clamp(dead, 0, population);
+
+        susceptibleHistory.Add(susceptible);
+        infectedHistory.Add(exposed + infected + hospitalized + critical);
+        recoveredHistory.Add(recovered);
+        deadHistory.Add(dead);
     }
 
     public void Infect()

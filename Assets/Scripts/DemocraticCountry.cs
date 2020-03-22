@@ -8,6 +8,7 @@ public class DemocraticCountry : Country
 
     bool enforcingLaw = false;
     public IDisease disease;
+    public Graph graph;
 
     private IEnumerator StartLawProcess(@Law law)
     {
@@ -55,12 +56,15 @@ public class DemocraticCountry : Country
         Debug.Log("Bundesland mit erstem Infiziertem: " + states[randomStateIndex].stateName);
         states[randomStateIndex].Infect();
 
+        susceptibleHistory.Add(susceptible);
+
         disease = new Corona();
     }
 
     private void FixedUpdate()
     {
         UpdateTick(disease);
+        graph.UpdateLines();
     }
 
 }
