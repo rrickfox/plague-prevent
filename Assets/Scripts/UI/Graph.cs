@@ -9,12 +9,11 @@ public class Graph : MonoBehaviour
     public LineRenderer infected;
     public LineRenderer recovered;
     public LineRenderer dead;
-
-    private RectTransform rect;
+    public RectTransform rect;
 
     private void Start()
     {
-        rect = transform.GetComponent<RectTransform>();
+        
     }
 
     public void SelectState(State state)
