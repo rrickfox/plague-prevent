@@ -38,6 +38,7 @@ public class State : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         susceptible = population;
+        Debug.Log("beta: " +  beta);
     }
 
     private void Update()
@@ -49,14 +50,14 @@ public class State : MonoBehaviour
     }
 
     public float beta => (r0 * isolation * mt) / ti; //transmission rate
-    public float r0 = 2.7f;                 //secondary infections, range 2-3
-    public float isolation = 0.1f;          //degree to which people are isolated from the population
-    public float mt => 1f;                  //time course of mitigation measures
-    public float tl => 3f * timeScale;      //latency time from infection to infectiousness
+    public float r0 = 4.5f;                 //secondary infections, range 2-3
+    public float isolation = 1f;            //degree to which people are isolated from the population
+    public float mt = 1f;                   //time course of mitigation measures
+    public float tl => 2f * timeScale;      //latency time from infection to infectiousness
     public float ti => 14f * timeScale;     //time an individual is infectious after which he/she recovers or falls severely ill
     public float th => 17f * timeScale;     //time a sick person recovers or deteriorates into a critical state
     public float tc => 21f * timeScale;     //time a person remains critical before dying or stabilizing
-    public float m => 0.80f;                //fraction of infectious that are asymptomatic or mild
+    public float m => 0.10f;                //fraction of infectious that are asymptomatic or mild
     public float c => 0.15f;                //fraction of severe cases that turn critical
     public float f => 0.3f;                 //fraction of critical cases that are fatal
 

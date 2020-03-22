@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
     public bool menu;
 
     public CountryStats countryStats;
+    public SideStats sideStats;
     public GameObject selectedCountry;
     public State state;
 
@@ -27,7 +28,8 @@ public class Manager : MonoBehaviour
                 selectedCountry = null;
                 state = null;
             }
-            countryStats.SelectCountry(state);
+            countryStats.SelectState(state);
+            sideStats.SelectState(state);
         }
     }
 }
