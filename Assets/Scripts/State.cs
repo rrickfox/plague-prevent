@@ -51,8 +51,8 @@ public class State : MonoBehaviour
 
     public float beta => (r0 * isolation * mt) / ti; //transmission rate
     public float r0 = 4.5f;                 //secondary infections, range 2-3
-    public float isolation = 1f;          //degree to which people are isolated from the population
-    public float mt => 1f;                  //time course of mitigation measures
+    public float isolation = 1f;            //degree to which people are isolated from the population
+    public float mt = 1f;                   //time course of mitigation measures
     public float tl => 2f * timeScale;      //latency time from infection to infectiousness
     public float ti => 14f * timeScale;     //time an individual is infectious after which he/she recovers or falls severely ill
     public float th => 17f * timeScale;     //time a sick person recovers or deteriorates into a critical state
