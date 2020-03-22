@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
 {
     public bool paused;
     public bool menu;
+    public bool action;
 
     public CountryStats countryStats;
     public SideStats sideStats;

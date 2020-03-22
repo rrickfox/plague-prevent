@@ -30,6 +30,8 @@ public class SkillTree : MonoBehaviour
     public TextMeshProUGUI severityText;
     public TextMeshProUGUI deathRateText;
     public TextMeshProUGUI budgetText;
+    public TextMeshProUGUI satisfactionText;
+    public TextMeshProUGUI statsText;
 
 
     public Transform actionMenu;                                                        //To set parent to panel
@@ -178,7 +180,7 @@ public class SkillTree : MonoBehaviour
     }
 
 
-    private float sensitivity = 10f;
+    private float sensitivity = 1f;
 
    
     private void Update()
@@ -187,7 +189,7 @@ public class SkillTree : MonoBehaviour
         //Move Hexagons
         bool panPressed = Input.GetMouseButton(2);
 
-        if (panPressed && manager.menu)
+        if (panPressed && manager.action)
         {
             float xMov = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity * 100f;
             float yMove = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity * 100f;
@@ -196,7 +198,7 @@ public class SkillTree : MonoBehaviour
 
 
         //Select Hexagon
-        if (Input.GetMouseButtonDown(0) && manager.menu)
+        if (Input.GetMouseButtonDown(0) && manager.action)
         {
 
             //Code from https://gamedev.stackexchange.com/questions/93592/graphics-raycaster-of-unity-how-does-it-work
@@ -243,6 +245,7 @@ public class SkillTree : MonoBehaviour
             severityText.text = string.Format("Schwere:\n{0}%", country.disease.c*100);
             deathRateText.text = string.Format("Todesrate:\n{0}%", country.disease.f*100);
             budgetText.text = string.Format("{0}€", country.currentBudget);
+            satisfactionText.text = string.Format("Befriedigung:\n{0}", country.satisfaction);
         }
 
 
@@ -261,9 +264,10 @@ public class SkillTree : MonoBehaviour
         actionName.text = selectedNode.law.name;
         actionDescription.text = selectedNode.law.description;
         actionCost.text = string.Format("Kosten: {0}€", selectedNode.law.cost);
+        statsText.text = string.Format("Befriedigung: {0}\nIsolierung: {1}\nInfektion: {2}\nMitgation: {3}", selectedNode.law.satisfaction,selectedNode.law.isolationDampener,selectedNode.law.r0Dampener,selectedNode.law.mtDampener);
 
         //If enforced button should be disabled
-        if(Enforces(selectedNode.law.name) != -1)
+        if (Enforces(selectedNode.law.name) != -1)
         {
             enforceButton.interactable = false;
         }

@@ -35,6 +35,7 @@ public class GameUI : MonoBehaviour
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
         manager.menu = false;
+        manager.action = false;
     }
 
     public void ToPauseMenu()
@@ -45,6 +46,7 @@ public class GameUI : MonoBehaviour
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
         manager.menu = true;
+        manager.action = false;
     }
 
     public void ToSettingsMenu()
@@ -55,6 +57,7 @@ public class GameUI : MonoBehaviour
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(false);
         manager.menu = true;
+        manager.action = false;
     }
 
     public void ToActionsMenu()
@@ -65,6 +68,7 @@ public class GameUI : MonoBehaviour
         actionsMenu.SetActive(true);
         statisticsMenu.SetActive(false);
         manager.menu = false;
+        manager.action = true;
     }
 
     public void ToStatisticsMenu()
@@ -75,6 +79,7 @@ public class GameUI : MonoBehaviour
         actionsMenu.SetActive(false);
         statisticsMenu.SetActive(true);
         manager.menu = false;
+        manager.action = false;
     }
 
     public void QuitGame()
