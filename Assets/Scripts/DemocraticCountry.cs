@@ -8,7 +8,15 @@ public class DemocraticCountry : Country
 
     public override void EnforceLaw(Law law)
     {
-        throw new System.NotImplementedException();
+        foreach(State state in states)
+        {
+            state.r0 -= law.r0Dampener;
+            state.isolation -= law.isolationDampener;
+            state.mt -= law.mtDampener;
+
+        }
+
+        enforcedLaws.Add(law);
     }
 
     private void Start()
