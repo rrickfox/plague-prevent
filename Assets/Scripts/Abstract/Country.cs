@@ -14,6 +14,7 @@ public abstract class Country : MonoBehaviour
     public bool democratic;                                         //Whether the country is democratic or not
     public static Dictionary<string,LawNode> laws;                  //List of law trees that can be enforced
     public List<Law> enforcedLaws = new List<Law>();                //List of laws than are currently being enforced              
+    public IDisease disease;
     
     public int startingBudget;                                      //The starting budget for a country
     public int currentBudget;                                       //The current budget for a country
@@ -109,7 +110,7 @@ public abstract class Country : MonoBehaviour
             ticks = 0;
             seconds++;
             foreach (var state in states)
-                state.CalculateInfectionRates();
+                state.CalculateInfectionRates(disease);
             
             foreach(var state in states)
             {
