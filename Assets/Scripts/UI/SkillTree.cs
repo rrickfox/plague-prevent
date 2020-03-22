@@ -30,8 +30,9 @@ public class SkillTree : MonoBehaviour
     {
 
         //Fetch Sprite data
-        spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
-        pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+        //No longer needed
+        //spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
+        //pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries

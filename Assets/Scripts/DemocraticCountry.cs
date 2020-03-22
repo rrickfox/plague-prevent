@@ -6,17 +6,24 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
 
-    public override void EnforceLaw(Law law)
+
+    private IEnumerator StartLawProcess(Law law)
     {
-        foreach(State state in states)
+        yield return new WaitForSeconds(Random.Range(50f / law.satisfaction, 100f / law.satisfaction));
+        foreach (State state in states)
         {
             state.r0 -= law.r0Dampener;
             state.isolation -= law.isolationDampener;
             state.mt -= law.mtDampener;
-
         }
 
         enforcedLaws.Add(law);
+    }
+
+
+    public override void EnforceLaw(Law law)
+    {
+        StartCoroutine(StartLawProcess(law));
     }
 
     private void Start()

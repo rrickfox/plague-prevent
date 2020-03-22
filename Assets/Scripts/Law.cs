@@ -43,7 +43,7 @@ public class LawNode
         }
         else
         {
-            law = new Law("none", 0, 0f, "", true);
+            law = new Law("none", 0, 0f,0f,0f, "", true);
         }
         
     }
