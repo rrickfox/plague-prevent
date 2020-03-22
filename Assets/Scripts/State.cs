@@ -27,6 +27,9 @@ public class State : MonoBehaviour
 
     public List<State> neighbouring;        //Neighbouring states
 
+    public float infectedThreshold = 0.5f;
+    public float deadThreshold = 0.1f;
+
     private SpriteRenderer renderer;
 
     
@@ -40,8 +43,8 @@ public class State : MonoBehaviour
     private void Update()
     {
         //Copyright JP
-        Color inf = Color.Lerp(Color.white, Color.red, (float)infected / (float)population);
-        Color deadC = Color.Lerp(inf, Color.black, (float)dead / (float)population);
+        Color inf = Color.Lerp(Color.white, Color.red, infected / (population * infectedThreshold));
+        Color deadC = Color.Lerp(inf, Color.black, dead / (population * deadThreshold));
         renderer.color = deadC;
     }
 
