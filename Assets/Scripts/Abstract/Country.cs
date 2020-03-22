@@ -28,7 +28,11 @@ public abstract class Country : MonoBehaviour
     public float dead => states.Sum(s => s.dead);
     public float recovered => states.Sum(s => s.recovered);
     public float population => states.Sum(s => s.population);         //Total population of the country
-
+    
+    public List<float> susceptibleHistory = new List<float>();
+    public List<float> infectedHistory = new List<float>(){0};
+    public List<float> recoveredHistory = new List<float>(){0};
+    public List<float> deadHistory = new List<float>(){0};
 
 
     public float ticks = 0f;
@@ -127,6 +131,10 @@ public abstract class Country : MonoBehaviour
 
             //Debug.Log(string.Format("Current Budget: {0}", (Constants.timeScale * 2f)));
 
+            susceptibleHistory.Add(susceptible);
+            infectedHistory.Add(exposed + infected + hospitalized + critical);
+            recoveredHistory.Add(recovered);
+            deadHistory.Add(dead);
         }
     }
 }

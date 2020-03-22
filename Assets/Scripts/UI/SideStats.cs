@@ -22,12 +22,16 @@ public class SideStats : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         UpdateStats();
     }
 
-    public void SelectState(State state) => this.state = state;
+    public void SelectState(State state) 
+    {
+        this.state = state;
+        UpdateStats();
+    }
 
     public void UpdateStats()
     {

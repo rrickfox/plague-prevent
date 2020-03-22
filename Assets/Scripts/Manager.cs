@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
 
     public CountryStats countryStats;
     public SideStats sideStats;
+    public Graph graph;
     public GameObject selectedCountry;
     public State state;
 
@@ -38,6 +39,7 @@ public class Manager : MonoBehaviour
             }
             countryStats.SelectState(state);
             sideStats.SelectState(state);
+            graph.SelectState(state);
         }
     }
 
