@@ -6,6 +6,9 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
 
+
+    public IDisease disease;
+
     private IEnumerator StartLawProcess(@Law law)
     {
         enforcingLaw = true;
@@ -15,8 +18,7 @@ public class DemocraticCountry : Country
 
         law.active = true;
         enforcedLaws.Add(law);
-        
-
+       
         while (count < satisfaction*100f)
         {
             count += 1;
@@ -25,15 +27,11 @@ public class DemocraticCountry : Country
             yield return new WaitForSeconds(0.1f);
         }
 
-        
-        foreach (State state in states)
-        {
-            state.r0 -= law.r0Dampener;
-            state.isolation -= law.isolationDampener;
-            state.mt -= law.mtDampener;
-        }
-        enforcingLaw = false;
+        disease.r0 -= law.r0Dampener;
+        disease.isolation -= law.isolationDampener;
+        disease.mt -= law.mtDampener;
 
+        enforcingLaw = false;
     }
 
 
@@ -54,11 +52,13 @@ public class DemocraticCountry : Country
         var randomStateIndex = random.Next(states.Count);
         Debug.Log("Bundesland mit erstem Infiziertem: " + states[randomStateIndex].stateName);
         states[randomStateIndex].Infect();
+
+        disease = new Corona();
     }
 
     private void FixedUpdate()
     {
-        UpdateTick();
+        UpdateTick(disease);
     }
 
 }

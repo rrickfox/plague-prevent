@@ -101,7 +101,7 @@ public abstract class Country : MonoBehaviour
     public TextMeshProUGUI daysText;
 
 
-    public virtual void UpdateTick()
+    public virtual void UpdateTick(IDisease disease)
     {
         ticks++;
         if (ticks == 50)
@@ -109,7 +109,7 @@ public abstract class Country : MonoBehaviour
             ticks = 0;
             seconds++;
             foreach (var state in states)
-                state.CalculateInfectionRates();
+                state.CalculateInfectionRates(disease);
             
             foreach(var state in states)
             {
