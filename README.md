@@ -4,6 +4,9 @@ Man spielt in der Rolle der Regierung, man muss Maßnahmen ergreifen, um die Ver
 ## Anleitung
 Mit Hilfe verschiedener Gegenmaßnahmen muss der Spieler, der die Rolle der Regierung übernimmt, die Ausbreitung einer Krankheit innerhalb Deutschlands verhindern. Diese Gegenmaßnahmen können mit Geld entwickelt werden. Sie haben spezifische Eigenschaften, wie sie die Infektiosität verringern und die Isolation erhöhen. Ein wichtiges Merkmal ist die Zufriedenheit, die diese Gesetze hervorrufen, wobei 0 schrecklich und 99 großartig ist. Je höher die Zufriedenheit, desto schneller wird Geld verdient und desto schneller können Gesetze durchgesetzt werden.
 
+## Video
+https://www.youtube.com/watch?v=eHieN1iqx5U
+
 ## How to use
 Unter https://github.com/rrickfox/plague-prevent/releases den neusten Release auswählen, die .7z entpacken. Eine Windows-Version befindet sich dann im Ordner `V<Versionsnummer>`, die ausführbare Datei heißt dann `Plague-prevent.exe`. Versionen für Mac und Linux Systeme könne wir leider nicht bereitstellen.
 
