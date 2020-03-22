@@ -40,6 +40,8 @@ public class DemocraticCountry : Country
         Debug.Log(string.Format("Enforcing Law: {0}",law.name));
         if (!enforcingLaw)
         {
+
+            currentBudget -= law.cost;
             StartCoroutine(StartLawProcess(law));
         }
         

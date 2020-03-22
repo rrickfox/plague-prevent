@@ -171,9 +171,11 @@ public class SkillTree : MonoBehaviour
 
     private float sensitivity = 10f;
 
-    //Move Hexagons
+   
     private void Update()
     {
+
+        //Move Hexagons
         bool panPressed = Input.GetMouseButton(2);
 
         if (panPressed && manager.menu)
@@ -184,6 +186,7 @@ public class SkillTree : MonoBehaviour
         }
 
 
+        //Select Hexagon
         if (Input.GetMouseButtonDown(0) && manager.menu)
         {
 
@@ -216,7 +219,7 @@ public class SkillTree : MonoBehaviour
 
         }
 
-
+        //Disable enforce button when enforcing a law
         if (country.enforcingLaw)
         {
             einfuehrenButton.interactable = false;
@@ -251,7 +254,7 @@ public class SkillTree : MonoBehaviour
         }
 
 
-        if (country.enforcingLaw)
+        if (country.enforcingLaw || country.currentBudget < GetNode(Country.laws[currentBranch], currentNode).law.cost)
         {
             einfuehrenButton.interactable = false;
         }
