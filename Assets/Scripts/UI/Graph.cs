@@ -22,11 +22,6 @@ public class Graph : MonoBehaviour
         UpdateLines();
     }
 
-    private void FixedUpdate()
-    {
-        UpdateLines();
-    }
-
     public void UpdateLines()
     {
         if(state == null)
@@ -35,7 +30,6 @@ public class Graph : MonoBehaviour
             var suspos = world.susceptibleHistory.Select((val, index) => {
                 var x = ((float) index / Mathf.Clamp(susceptible.positionCount - 1, 1, Mathf.Infinity)) * rect.rect.width;
                 var y = (val / world.population) * rect.rect.height;
-                //Debug.Log("value: " + val + ", index: " + index + ", x: " + x + ", y: " + y); 
                 return new Vector3(x, y, -1);
             }).ToArray();
 
@@ -72,7 +66,6 @@ public class Graph : MonoBehaviour
             var suspos = state.susceptibleHistory.Select((val, index) => {
                 var x = ((float) index / Mathf.Clamp(susceptible.positionCount - 1, 1, Mathf.Infinity)) * rect.rect.width;
                 var y = (val / state.population) * rect.rect.height;
-                Debug.Log("value: " + val + ", index: " + index + ", x: " + x + ", y: " + y); 
                 return new Vector3(x, y, -1);
             }).ToArray();
 
@@ -102,7 +95,7 @@ public class Graph : MonoBehaviour
             susceptible.SetPositions(suspos);
             infected.SetPositions(infpos);
             recovered.SetPositions(recpos);
-            susceptible.SetPositions(deadpos);
+            dead.SetPositions(deadpos);
         }
     }
 }

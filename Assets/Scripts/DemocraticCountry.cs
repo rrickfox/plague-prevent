@@ -16,7 +16,7 @@ public class DemocraticCountry : Country
         law.active = true;
         enforcedLaws.Add(law);
        
-        while (count < satisfaction*100f)
+        while (count < satisfaction * 100f)
         {
             count += 1;
             lawEnforcementProgress = count / (satisfaction*100f);
