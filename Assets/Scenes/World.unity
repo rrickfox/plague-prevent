@@ -2484,11 +2484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   menu: 0
-<<<<<<< HEAD
-  countryStats: {fileID: 0}
-=======
   countryStats: {fileID: 1797363585}
->>>>>>> 93a3f6dd9b0bee30468cabbc63787bf9a8c63784
   selectedCountry: {fileID: 0}
   state: {fileID: 0}
 --- !u!4 &767808191
