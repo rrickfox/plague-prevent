@@ -1,0 +1,83 @@
+{
+    "law": {
+      "name": "",
+      "satisfaction": 0,
+      "dampener": 0.0,
+      "active": true,
+      "description": ""
+    },
+    "subNode": [
+      {
+        "law": {
+          "name": "Öffnungszeiten von Läden kürzen",
+          "satisfaction": 5,
+          "isolationDampener": 0.2,
+          "r0Dampener": 0.0,
+          "mtDampener": 0.1,
+          "active": false,
+          "description": "Es wird von der Regierung empfohlen, dass Zivilisten zu Hause bleiben.",
+          "cost": 1000000
+        },
+        "subNode": [
+          {
+            "law": {
+              "name": "Home Office",
+              "satisfaction": 15,
+              "isolationDampener": 0.01,
+              "r0Dampener": 0.1,
+              "mtDampener": 0.05,
+              "active": false,
+              "description": "Es wird von der Regierung empfohlen, dass Zivilisten von zu Hause aus arbeiten.",
+              "cost": 2000000
+            },
+            "subNode": [
+              
+            ]
+          }
+        ]
+      },
+      {
+        "law": {
+          "name": "Appell Zuhause zu bleiben",
+          "satisfaction": 80,
+          "isolationDampener": 0.1,
+          "r0Dampener": 0.2,
+          "mtDampener": 0.03,
+          "active": false,
+          "description": "Infizierte Zivilisten werden zur weiteren Behandlung ins Krankenhaus gebracht.",
+          "cost": 1000000
+        },
+        "subNode": [
+          {
+            "law": {
+              "name": "Personen müssen bis XX Uhr Zuhause sein",
+              "satisfaction": 2,
+              "isolationDampener": 0.2,
+              "r0Dampener": 0.4,
+              "mtDampener": 0.1,
+              "active": false,
+              "description": "Infizierte Zivilisten werden ins Bergwerk geschickt, um die Ansteckung zu verringern",
+              "cost": 100000
+            },
+            "subNode": [
+              {
+                "law": {
+                  "name": "Komplette Ausgangssperre",
+                  "satisfaction": 30,
+                  "isolationDampener": 0.5,
+                  "r0Dampener": 0.5,
+                  "mtDampener": 0.1,
+                  "active": false,
+                  "description": "Infizierte Zivilisten werden auf Kreuzfahrtschiffe geschickt, um die Ansteckung zu verringern.",
+                  "cost": 1000000
+                },
+                "subNode": [
+                  
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
