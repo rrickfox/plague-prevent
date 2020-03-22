@@ -119,7 +119,7 @@ public abstract class Country : MonoBehaviour
                     state.neighbouring[random.Next(state.neighbouring.Count)].Infect();
                 }
             }
-            daysText.text = string.Format("Tag: {0}", seconds / Constants.timeScale);
+            daysText.text = string.Format("Tag: {0}", Mathf.Floor(seconds / Constants.timeScale));
         }
     }
 }
