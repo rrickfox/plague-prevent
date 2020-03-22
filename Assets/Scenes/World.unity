@@ -6242,9 +6242,9 @@ MonoBehaviour:
   country: {fileID: 0}
   currentBranch: 
   currentNode: 
-  actionName: {fileID: 0}
-  actionDescription: {fileID: 0}
-  enforceButton: {fileID: 0}
+  actionName: {fileID: 411909899}
+  actionDescription: {fileID: 945146284}
+  enforceButton: {fileID: 597680629}
   actionMenu: {fileID: 2026021554}
   enforcedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   enforcableColor: {r: 1, g: 1, b: 1, a: 1}
@@ -9298,7 +9298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2026021552
 MonoBehaviour:
   m_ObjectHideFlags: 0

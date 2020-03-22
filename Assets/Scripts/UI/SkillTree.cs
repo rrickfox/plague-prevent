@@ -253,7 +253,7 @@ public class SkillTree : MonoBehaviour
             enforceButton.interactable = true;
         }
 
-
+        //Disables if not enought money or currently enforcing
         if (country.enforcingLaw || country.currentBudget < GetNode(Country.laws[currentBranch], currentNode).law.cost)
         {
             enforceButton.interactable = false;
