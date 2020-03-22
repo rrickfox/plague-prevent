@@ -6,9 +6,6 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
 
-
-    public IDisease disease;
-
     private IEnumerator StartLawProcess(@Law law)
     {
         enforcingLaw = true;
@@ -23,7 +20,7 @@ public class DemocraticCountry : Country
         {
             count += 1;
             lawEnforcementProgress = count / (satisfaction*100f);
-            Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, lawEnforcementProgress * 100f));
+            //Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, lawEnforcementProgress * 100f));
             yield return new WaitForSeconds(0.1f);
         }
 

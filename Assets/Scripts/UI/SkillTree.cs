@@ -23,7 +23,13 @@ public class SkillTree : MonoBehaviour
     //UI Params
     public TextMeshProUGUI actionName;
     public TextMeshProUGUI actionDescription;
-    public Button enforceButton;                                            
+    public TextMeshProUGUI actionCost;
+    public Button enforceButton;
+
+    public TextMeshProUGUI infectionRateText;
+    public TextMeshProUGUI severityText;
+    public TextMeshProUGUI deathRateText;
+    public TextMeshProUGUI budgetText;
 
 
     public Transform actionMenu;                                                        //To set parent to panel
@@ -31,6 +37,9 @@ public class SkillTree : MonoBehaviour
     public Color enforcedColor = Color.gray;                                                 //Colour of hexagon thats
     public Color enforcableColor = Color.white;
     public Color lockedColor = Color.gray;
+
+    public Bar progressBar;                                                             //Refrence to the progress bar
+
 
     public void Start()
     {
@@ -223,7 +232,21 @@ public class SkillTree : MonoBehaviour
         if (country.enforcingLaw)
         {
             enforceButton.interactable = false;
+            //Progress bar
+            progressBar.SetValues(country.lawEnforcementProgress);
         }
+        else
+        {
+            progressBar.SetValues(0f);
+
+            infectionRateText.text = string.Format("Infektionsrate:\n{0}%", country.disease.r0*100);
+            severityText.text = string.Format("Schwere:\n{0}%", country.disease.c*100);
+            deathRateText.text = string.Format("Todesrate:\n{0}%", country.disease.f*100);
+            budgetText.text = string.Format("{0}€", country.currentBudget);
+        }
+
+
+
 
 
     }
@@ -237,6 +260,7 @@ public class SkillTree : MonoBehaviour
         //Updates the TMPro text elements
         actionName.text = selectedNode.law.name;
         actionDescription.text = selectedNode.law.description;
+        actionCost.text = string.Format("Kosten: {0}", selectedNode.law.cost);
 
         //If enforced button should be disabled
         if(Enforces(selectedNode.law.name) != -1)

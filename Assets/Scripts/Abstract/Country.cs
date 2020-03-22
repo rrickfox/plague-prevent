@@ -7,8 +7,8 @@ using TMPro;
 
 public abstract class Country : MonoBehaviour
 {
+    public IDisease disease;
 
-    
     public string countryName;                                      //Name of the country
 
     public bool democratic;                                         //Whether the country is democratic or not
