@@ -52,7 +52,7 @@ public class DemocraticCountry : Country
         Debug.Log("Bundesland mit erstem Infiziertem: " + states[randomStateIndex].stateName);
         states[randomStateIndex].Infect();
 
-        susceptibleHistory.Add(susceptible);
+        susceptibleHistory.Add(population);
 
         disease = new Corona();
     }
