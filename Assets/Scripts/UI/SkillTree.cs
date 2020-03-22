@@ -124,7 +124,7 @@ public class SkillTree : MonoBehaviour
         }
 
         //If active law
-        if (node.law.active)
+        if (node.law.active || country.enforcedLaws.Contains(node.law))
         {
             nodeG.GetComponent<Image>().color = Color.cyan;
         }
