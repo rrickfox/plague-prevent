@@ -16,7 +16,6 @@ public class State : MonoBehaviour
     public float dead = 0;                  //How many people have died
     public float recovered = 0;             //How many people have recovered from the virus
     public float population;                //Total population of the state
-    public float healthy => susceptible + recovered;
 
     public float susceptibleChange;         //Change in number of not infected people
     public float exposedChange;             //Change in number of exposed people
@@ -88,8 +87,9 @@ public class State : MonoBehaviour
 
     public void Infect()
     {
+        if(infected == 0)
+            Debug.LogWarning(stateName + " was Infected!");
         susceptible -= 1;
         infected += 1;
-        Debug.LogWarning(stateName + " was Infected!");
     }
 }
