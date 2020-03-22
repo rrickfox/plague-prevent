@@ -1030,6 +1030,7 @@ MonoBehaviour:
   infected: {fileID: 1494701979}
   recovered: {fileID: 1510475379}
   dead: {fileID: 1340889955}
+  rect: {fileID: 155722307}
 --- !u!1 &176479919
 GameObject:
   m_ObjectHideFlags: 0
