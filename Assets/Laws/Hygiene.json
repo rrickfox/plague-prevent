@@ -1,44 +1,55 @@
 {
-  "law": {
-    "name": "",
-    "satisfaction": 0,
-    "dampener": 0.0,
-    "active": true,
-	"description": ""
-  },
-  "subNode": [
-        {
-            "law": {
-                "name": "Hände waschen",
-                "satisfaction": 10,
-                "dampener": 0.1,
-                "active": false,
-				"description": "Die Regierung empfiehlt das häufigere Händewaschen.",
-				"cost": 100000
-            },
-            "subNode": []
+    "law": {
+      "name": "",
+      "satisfaction": 0,
+      "dampener": 0.0,
+      "active": true,
+      "description": ""
+    },
+    "subNode": [
+      {
+        "law": {
+          "name": "Hände waschen",
+          "satisfaction": 50,
+          "isolationDampener": 0,
+          "r0Dampener": 0.5,
+          "mtDampener": 0.1,
+          "active": false,
+          "description": "Die Regierung empfiehlt das häufigere Händewaschen.",
+          "cost": 10000
         },
-        {
+        "subNode": [
+          
+        ]
+      },
+      {
+        "law": {
+          "name": "Verteilen von Taschentüchern",
+          "satisfaction": 30,
+          "isolationDampener": 0,
+          "r0Dampener": 0.25,
+          "mtDampener": 0.1,
+          "active": false,
+          "description": "Die Regierung verteilt Taschentüchern, um die Ausbreitung der Krankheit zu verhindern.",
+          "cost": 100000
+        },
+        "subNode": [
+          {
             "law": {
-                "name": "Verteilen von Taschentüchern",
-                "satisfaction": 1,
-                "dampener": 0.01,
-                "active": false,
-				"description": "Die Regierung verteilt Taschentüchern, um die Ausbreitung der Krankheit zu verhindern.",
-				"cost": 100000,
-				"r0Dampener": 1.5
+              "name": "Verteilen von Disinfektionmittel",
+              "satisfaction": 10,
+              "isolationDampener": 0,
+              "r0Dampener": 0.5,
+              "mtDampener": 0.1,
+              "active": false,
+              "description": "Die Regierung verteilt Händedesinfektionsmittel, um die Ausbreitung der Krankheit zu verhindern.",
+              "cost": 1000000
             },
             "subNode": [
-                {
-                    "law": {
-                        "name": "Verteilen von Disinfektionmittel",
-                        "satisfaction": 1,
-                        "dampener": 0.01,
-                        "active": false,
-						"description": "Die Regierung verteilt Händedesinfektionsmittel, um die Ausbreitung der Krankheit zu verhindern."
-                    },
-                    "subNode": []
-                }
+              
             ]
-        }
-    ]}
+          }
+        ]
+      }
+    ]
+  }
