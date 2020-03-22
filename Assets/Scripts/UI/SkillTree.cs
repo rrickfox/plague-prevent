@@ -24,6 +24,7 @@ public class SkillTree : MonoBehaviour
     public TextMeshProUGUI massnahmeName;
     public TextMeshProUGUI massnhameBesch;
 
+    public Transform actionMenu;                                                        //To set parent to panel
 
     public void Start()
     {
@@ -57,12 +58,12 @@ public class SkillTree : MonoBehaviour
         if (!GameObject.Find(name))
         {
             GameObject g = new GameObject(name);
-            g.transform.SetParent(GameObject.Find("ActionsMenu").transform);
+            g.transform.SetParent(actionMenu);
             g.transform.SetAsFirstSibling();
             g.transform.localPosition = Vector3.zero;
             g.transform.localScale = Vector3.one;
 
-            Debug.Log(Country.laws[name].subNode.Count - 1);
+            //Debug.Log(Country.laws[name].subNode.Count - 1);
 
             Vector2 origin = Vector2.up * Screen.height *3f/ (2f* Country.laws[name].subNode.Count * 4f);   //Top of the screen
             Vector2 offset = Vector2.up * (Screen.height /((Country.laws[name].subNode.Count-1)*4f));   //Increments in symetrical steps so that each tree is spaced evenly

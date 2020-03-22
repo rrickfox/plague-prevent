@@ -5314,6 +5314,7 @@ MonoBehaviour:
   currentNode: 
   massnahmeName: {fileID: 411909899}
   massnhameBesch: {fileID: 945146284}
+  actionMenu: {fileID: 2026021554}
 --- !u!1 &1276055935
 GameObject:
   m_ObjectHideFlags: 0
@@ -7409,7 +7410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2026021552
 MonoBehaviour:
   m_ObjectHideFlags: 0
