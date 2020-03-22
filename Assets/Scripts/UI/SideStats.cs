@@ -35,14 +35,14 @@ public class SideStats : MonoBehaviour
         {
             population.text = world.population.ToString("N0", culture);
             susceptible.text = world.susceptible.ToString("N0", culture);
-            infected.text = (world.infected + world.hospitalized + world.critical).ToString("N0", culture);
+            infected.text = (world.exposed + world.infected + world.hospitalized + world.critical).ToString("N0", culture);
             recovered.text = world.recovered.ToString("N0", culture);
             dead.text = world.dead.ToString("N0", culture);
         } else
         {
             population.text = state.population.ToString("N0", culture);
             susceptible.text = state.susceptible.ToString("N0", culture);
-            infected.text = (state.infected + state.hospitalized + state.critical).ToString("N0", culture);
+            infected.text = (state.exposed + state.infected + state.hospitalized + state.critical).ToString("N0", culture);
             recovered.text = state.recovered.ToString("N0", culture);
             dead.text = state.dead.ToString("N0", culture);
         }
