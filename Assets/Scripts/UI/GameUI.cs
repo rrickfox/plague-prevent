@@ -9,9 +9,12 @@ public class GameUI : MonoBehaviour
     public GameObject gameUI;
     public GameObject actionsMenu;
 
+    private Manager manager;
+
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameObject.FindObjectOfType<Manager>();
         ToGameUI();
     }
 
@@ -25,11 +28,13 @@ public class GameUI : MonoBehaviour
     {
         gameUI.SetActive(true);
         actionsMenu.SetActive(false);
+        manager.menu = false;
     }
 
     public void ToActionsMenu()
     {
         gameUI.SetActive(false);
         actionsMenu.SetActive(true);
+        manager.menu = true;
     }
 }

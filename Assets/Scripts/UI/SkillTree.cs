@@ -12,35 +12,62 @@ public class SkillTree : MonoBehaviour
 
     public Country country;
 
-    public void LoadSkillTree()
+    private Manager manager;
+
+    public string currentString;                                                        //Current selected Law branch
+
+
+    public void Start()
     {
+        //Fetch Sprite data
         spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
         pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
-
-        Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
+        //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries
         country = GameObject.FindObjectOfType<Country>();
 
 
+        manager = GetComponent<Manager>();
 
-        int j = 0;  //Count for outer foreach loop
-        foreach(KeyValuePair<string, LawNode> val in Country.laws)
-        {
-
-            int i = 0;  //Count for inner foreach loop
-            //Ignore root node and only create nodes starting from the second layer
-            foreach (LawNode node in val.Value.subNode)
-            {
-                CreateNode(node, new Vector2(-Screen.width/3.5f,-Screen.height/3.5f) - Vector2.left * (j+i) * 300f);
-                i++;
-            }
-            j++;
-
-        }
+        //Automatically load hygiene
+        LoadSkillTree("Hygiene");
     }
 
-    private void CreateNode(LawNode node, Vector2 position)
+    public void LoadSkillTree(string name)
+    {
+        //If it finds a loaded skill tree it destroys it
+        if (GameObject.Find(currentString) && name != currentString)
+        {
+            Destroy(GameObject.Find(currentString));
+        }
+        //If it can't already find the object it creates a new one
+        if (!GameObject.Find(name))
+        {
+            GameObject g = new GameObject(name);
+            g.transform.SetParent(GameObject.Find("ActionsMenu").transform);
+            g.transform.SetAsFirstSibling();
+            g.transform.localPosition = Vector3.zero;
+            g.transform.localScale = Vector3.one;
+
+            Debug.Log(Country.laws[name].subNode.Count - 1);
+
+            Vector2 origin = Vector2.up * Screen.height *3f/ (2f* Country.laws[name].subNode.Count * 4f);   //Top of the screen
+            Vector2 offset = Vector2.up * (Screen.height /((Country.laws[name].subNode.Count-1)*4f));   //Increments in symetrical steps so that each tree is spaced evenly
+            int count = 0;
+            //Ignore root node and only create nodes starting from the second layer
+            foreach (LawNode node in Country.laws[name].subNode)
+            {
+                CreateNode(node, origin- offset* count, g.transform);
+                count++;
+            }
+            currentString = name;
+        }
+
+
+    }
+
+    private void CreateNode(LawNode node, Vector2 position, Transform parent)
     {
         //Debug.Log(string.Format("Name: {0}, ChildIndex: {1}, Previous: {2}", node.law.name, node.childIndex, node.prev.law.name));
 
@@ -51,15 +78,34 @@ public class SkillTree : MonoBehaviour
 
         GameObject nodeG = Instantiate(hexagon, position, Quaternion.identity);         //Create Hexagon object
         nodeG.name = node.law.name;
-        nodeG.transform.SetParent(GameObject.Find("ActionsMenu").transform, false);
+        nodeG.SetActive(true);
+        nodeG.transform.SetParent(parent, false);
         foreach(LawNode subNode in node.subNode)                                        //Call function for each subnode
         {
             //Different cases, check notebook (Progyo)
             
             Vector2 newPos = position + offsets[subNode.childIndex];    
 
-            CreateNode(subNode, newPos);
+            CreateNode(subNode, newPos, parent);
         }
     }
+
+
+    private float sensitivity = 10f;
+
+    //Move Hexagons
+    private void Update()
+    {
+        bool panPressed = Input.GetMouseButton(2);
+
+        if (panPressed && manager.menu)
+        {
+            float xMov = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity * 100f;
+            float yMove = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity * 100f;
+            GameObject.Find(currentString).transform.position += new Vector3(xMov, yMove);
+        }
+    }
+
+
 
 }
