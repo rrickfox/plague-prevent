@@ -11,7 +11,12 @@ public class CountryStats : MonoBehaviour
     public Bar bar;
 
     private State state;
-    
+
+    private void Start()
+    {
+        SelectCountry(null);
+        UpdateStats();
+    }
 
     // Update is called once per frame
     void Update()

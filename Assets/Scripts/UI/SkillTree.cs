@@ -17,10 +17,13 @@ public class SkillTree : MonoBehaviour
         spriteDim = hexagon.GetComponent<SpriteRenderer>().size*5.5f;
         pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
 
-        Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
+        //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries
         country = GameObject.FindObjectOfType<Country>();
+
+
+
         int j = 0;  //Count for outer foreach loop
         foreach(KeyValuePair<string, LawNode> val in Country.laws)
         {
