@@ -15,7 +15,11 @@ public class DemocraticCountry : Country
         float satisfaction = Random.Range(law.satisfaction / 2f, law.satisfaction);
         float count = 0;
         float progress = 0f;
-        
+
+        law.active = true;
+        enforcedLaws.Add(law);
+        enforcingLaw = false;
+
         while (count < satisfaction*100f)
         {
             count += 1;
@@ -32,9 +36,7 @@ public class DemocraticCountry : Country
             state.mt -= law.mtDampener;
         }
 
-        law.active = true;
-        enforcedLaws.Add(law);
-        enforcingLaw = false;
+
     }
 
 
