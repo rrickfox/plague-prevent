@@ -155,6 +155,12 @@ public class SkillTree : MonoBehaviour
         {
             nodeG.GetComponent<Image>().color = lockedColor;
         }
+
+        if(Enforces(node.law.name) == -1 && node.prev.law.name == "")
+        {
+            nodeG.GetComponent<Image>().color = enforcableColor;
+        }
+
         //Previous is unlocked -> set to white
         if (Enforces(node.prev.law.name) != -1)//(country.enforcedLaws.Contains(node.prev.law))
         {
