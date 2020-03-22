@@ -1,0 +1,57 @@
+{
+  "law": {
+    "name": "",
+    "satisfaction": 0,
+    "dampener": 0.0,
+    "active": true
+  },
+  "subNode": [
+        {
+            "law": {
+                "name": "Zuhause",
+                "satisfaction": 10,
+                "dampener": 1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Home Office",
+                        "satisfaction": 1,
+                        "dampener": 1,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        },
+        {
+            "law": {
+                "name": "Infizierte ins Krankenhaus",
+                "satisfaction": 1,
+                "dampener": 1,
+                "active": false
+            },
+            "subNode": [
+                {
+                    "law": {
+                        "name": "Infizierte ins Bergwerk",
+                        "satisfaction": 1,
+                        "dampener": 0.5,
+                        "active": false
+                    },
+                    "subNode": []
+                },
+                {
+                    "law": {
+                        "name": "Infizierte auf Kreuzfahrtschiffe",
+                        "satisfaction": 1,
+                        "dampener": 0.3,
+                        "active": false
+                    },
+                    "subNode": []
+                }
+            ]
+        }
+    ]
+}

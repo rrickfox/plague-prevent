@@ -1,0 +1,83 @@
+{
+  "law": {
+    "name": "",
+    "satisfaction": 0,
+    "dampener": 0.0,
+    "active": true,
+    "description": ""
+  },
+  "subNode": [
+    {
+      "law": {
+        "name": "Fahrrad fahren",
+        "satisfaction": 60,
+        "isolationDampener": 0.0,
+        "r0Dampener": 0.2,
+        "mtDampener": 0.0,
+        "active": false,
+        "description": "Die Regierung empfiehlt das Radfahren, um den öffentlichen Verkehr zu minimieren.",
+        "cost": 10000
+      },
+      "subNode": [
+      ]
+    },
+    {
+      "law": {
+        "name": "Bessere Lebensmittelversorgung",
+        "satisfaction": 70,
+        "isolationDampener": 0.0,
+        "r0Dampener": 0.0,
+        "mtDampener": 0.00,
+        "active": false,
+        "description": "Supermärkte sind schneller auf Lager.",
+        "cost": 500000
+      },
+      "subNode": [
+        {
+          "law": {
+            "name": "Bessere Obst- und Gemüseversorgung",
+            "satisfaction": 80,
+            "isolationDampener": 0.0,
+            "r0Dampener": 0.3,
+            "mtDampener": 0.0,
+            "active": false,
+            "description": "Stärkt das Immunsystem der Bevölkerung.",
+            "cost": 200000
+          },
+          "subNode": [
+            {
+              "law": {
+                "name": "Riesiger Nachschub an Toilettenpapier",
+                "satisfaction": 99,
+                "isolationDampener": 0.0,
+                "r0Dampener": 0.0,
+                "mtDampener": 0.0,
+                "active": false,
+                "description": "Toilettenpapier wird in allen Supermärkten nachgefüllt.",
+                "cost": 1000000
+              },
+              "subNode": [
+                
+              ]
+            },
+            {
+              "law": {
+                "name": "Riesiger Nachschub an Nudeln",
+                "satisfaction": 99,
+                "isolationDampener": 0.0,
+                "r0Dampener": 0.0,
+                "mtDampener": 0.0,
+                "active": false,
+                "description": "Nudeln werden in allen Supermärkten nachgefüllt.",
+                "cost": 1000000
+              },
+              "subNode": [
+                
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
