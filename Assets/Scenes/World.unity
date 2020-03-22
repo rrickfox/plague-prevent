@@ -14342,6 +14342,48 @@ MonoBehaviour:
   panel: {fileID: 166346733}
   titleText: {fileID: 1866798051}
   messageText: {fileID: 1638983532}
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.6066687
+      outSlope: 0.6066687
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.24624486
+      value: 0.14938906
+      inSlope: 0.77135503
+      outSlope: 0.77135503
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.16726495
+    - serializedVersion: 3
+      time: 0.91637003
+      value: 1.0600805
+      inSlope: 0.041904405
+      outSlope: 0.041904405
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2745518
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.7184091
+      outSlope: -0.7184091
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1700312232
 GameObject:
   m_ObjectHideFlags: 0

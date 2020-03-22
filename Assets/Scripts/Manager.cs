@@ -26,8 +26,8 @@ public class Manager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit)
             {
-                if (selectedCountry == hit.transform.gameObject)
-                    SetFocus(selectedCountry);
+                if (selectedCountry == hit.transform.gameObject) { }
+                //SetFocus(selectedCountry);
                 else
                 {
                     selectedCountry = hit.transform.gameObject;
