@@ -6,27 +6,21 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
 
-    bool enforcingLaw = false;
-    public IDisease disease;
-    public Graph graph;
-
     private IEnumerator StartLawProcess(@Law law)
     {
         enforcingLaw = true;
         //Pick random satisfaction between two values
         float satisfaction = Random.Range(law.satisfaction / 2f, law.satisfaction);
         float count = 0;
-        float progress = 0f;
 
         law.active = true;
         enforcedLaws.Add(law);
-        enforcingLaw = false;
-
+       
         while (count < satisfaction*100f)
         {
             count += 1;
-            progress = count / (satisfaction*100f);
-            Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, progress * 100f));
+            lawEnforcementProgress = count / (satisfaction*100f);
+            //Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, lawEnforcementProgress * 100f));
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -34,7 +28,7 @@ public class DemocraticCountry : Country
         disease.isolation -= law.isolationDampener;
         disease.mt -= law.mtDampener;
 
-
+        enforcingLaw = false;
     }
 
 
@@ -43,6 +37,8 @@ public class DemocraticCountry : Country
         Debug.Log(string.Format("Enforcing Law: {0}",law.name));
         if (!enforcingLaw)
         {
+
+            currentBudget -= law.cost;
             StartCoroutine(StartLawProcess(law));
         }
         
@@ -64,7 +60,6 @@ public class DemocraticCountry : Country
     private void FixedUpdate()
     {
         UpdateTick(disease);
-        graph.UpdateLines();
     }
 
 }

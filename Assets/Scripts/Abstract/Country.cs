@@ -7,8 +7,8 @@ using TMPro;
 
 public abstract class Country : MonoBehaviour
 {
+    public IDisease disease;
 
-    
     public string countryName;                                      //Name of the country
 
     public bool democratic;                                         //Whether the country is democratic or not
@@ -40,8 +40,8 @@ public abstract class Country : MonoBehaviour
     public float chanceOfTravellerToInfect = 0.5f;
 
 
-
-
+    public bool enforcingLaw = false;                               //Whether the country is enforcing a law
+    public float lawEnforcementProgress = 0f;                       //Progress of the law enforcement
 
 
     public List<State> states;                                      //List of states in the country

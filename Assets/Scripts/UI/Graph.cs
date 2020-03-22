@@ -25,6 +25,11 @@ public class Graph : MonoBehaviour
         UpdateLines();
     }
 
+    private void FixedUpdate()
+    {
+        UpdateLines();
+    }
+
     public void UpdateLines()
     {
         if(state == null)

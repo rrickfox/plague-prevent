@@ -21,12 +21,25 @@ public class SkillTree : MonoBehaviour
     public string currentNode;                                                          //Current selected Law node
 
     //UI Params
-    public TextMeshProUGUI massnahmeName;
-    public TextMeshProUGUI massnhameBesch;
-    public Button einfuehrenButton;                                            
+    public TextMeshProUGUI actionName;
+    public TextMeshProUGUI actionDescription;
+    public TextMeshProUGUI actionCost;
+    public Button enforceButton;
+
+    public TextMeshProUGUI infectionRateText;
+    public TextMeshProUGUI severityText;
+    public TextMeshProUGUI deathRateText;
+    public TextMeshProUGUI budgetText;
 
 
     public Transform actionMenu;                                                        //To set parent to panel
+
+    public Color enforcedColor = Color.gray;                                                 //Colour of hexagon thats
+    public Color enforcableColor = Color.white;
+    public Color lockedColor = Color.gray;
+
+    public Bar progressBar;                                                             //Refrence to the progress bar
+
 
     public void Start()
     {
@@ -138,19 +151,19 @@ public class SkillTree : MonoBehaviour
         //Check if previous Node is unlocked, otherwise lock
         if (Enforces(node.law.name) == -1 && node.prev.law.name != "")//(!country.enforcedLaws.Contains(node.law) && node.prev.law.name != "")
         {
-            nodeG.GetComponent<Image>().color = Color.gray;
+            nodeG.GetComponent<Image>().color = lockedColor;
         }
         //Previous is unlocked -> set to white
         if (Enforces(node.prev.law.name) != -1)//(country.enforcedLaws.Contains(node.prev.law))
         {
-            nodeG.GetComponent<Image>().color = Color.white;
+            nodeG.GetComponent<Image>().color =enforcableColor;
         }
 
 
         //If active law
         if (Enforces(node.law.name) != -1)//(country.enforcedLaws.Contains(node.law))
         {
-            nodeG.GetComponent<Image>().color = Color.cyan;
+            nodeG.GetComponent<Image>().color = enforcedColor;
         }
 
 
@@ -167,9 +180,11 @@ public class SkillTree : MonoBehaviour
 
     private float sensitivity = 10f;
 
-    //Move Hexagons
+   
     private void Update()
     {
+
+        //Move Hexagons
         bool panPressed = Input.GetMouseButton(2);
 
         if (panPressed && manager.menu)
@@ -180,6 +195,7 @@ public class SkillTree : MonoBehaviour
         }
 
 
+        //Select Hexagon
         if (Input.GetMouseButtonDown(0) && manager.menu)
         {
 
@@ -212,6 +228,26 @@ public class SkillTree : MonoBehaviour
 
         }
 
+        //Disable enforce button when enforcing a law
+        if (country.enforcingLaw)
+        {
+            enforceButton.interactable = false;
+            //Progress bar
+            progressBar.SetValues(country.lawEnforcementProgress);
+        }
+        else
+        {
+            progressBar.SetValues(0f);
+
+            infectionRateText.text = string.Format("Infektionsrate:\n{0}%", country.disease.r0*100);
+            severityText.text = string.Format("Schwere:\n{0}%", country.disease.c*100);
+            deathRateText.text = string.Format("Todesrate:\n{0}%", country.disease.f*100);
+            budgetText.text = string.Format("{0}€", country.currentBudget);
+        }
+
+
+
+
 
     }
 
@@ -222,25 +258,31 @@ public class SkillTree : MonoBehaviour
         LawNode selectedNode = GetNode(Country.laws[currentBranch], currentNode);
 
         //Updates the TMPro text elements
-        massnahmeName.text = selectedNode.law.name;
-        massnhameBesch.text = selectedNode.law.description;
+        actionName.text = selectedNode.law.name;
+        actionDescription.text = selectedNode.law.description;
+        actionCost.text = string.Format("Kosten: {0}", selectedNode.law.cost);
 
         //If enforced button should be disabled
         if(Enforces(selectedNode.law.name) != -1)
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
         //If previous is not enforced it should be disabled
         else if (Enforces(selectedNode.prev.law.name) == -1 && selectedNode.prev.law.name != "")
         {
-            einfuehrenButton.interactable = false;
+            enforceButton.interactable = false;
         }
         else
         {
-            einfuehrenButton.interactable = true;
+            enforceButton.interactable = true;
         }
 
-        
+        //Disables if not enought money or currently enforcing
+        if (country.enforcingLaw || country.currentBudget < GetNode(Country.laws[currentBranch], currentNode).law.cost)
+        {
+            enforceButton.interactable = false;
+        }
+
     }
 
 
@@ -254,9 +296,12 @@ public class SkillTree : MonoBehaviour
         //Visually enable all subnodes
         foreach(LawNode node in GetNode(Country.laws[currentBranch], currentNode).subNode)
         {
-            GameObject.Find(node.law.name).GetComponent<Image>().color = Color.white;
+            GameObject.Find(node.law.name).GetComponent<Image>().color = enforcableColor;
         }
-        
+
+        GameObject.Find(GetNode(Country.laws[currentBranch], currentNode).law.name).GetComponent<Image>().color = enforcedColor;
+
+
     }
 
 }
