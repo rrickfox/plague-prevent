@@ -23,6 +23,8 @@ public class SkillTree : MonoBehaviour
     //UI Params
     public TextMeshProUGUI massnahmeName;
     public TextMeshProUGUI massnhameBesch;
+    public Button einfuehrenButton;                                            
+
 
     public Transform actionMenu;                                                        //To set parent to panel
 
@@ -30,9 +32,8 @@ public class SkillTree : MonoBehaviour
     {
 
         //Fetch Sprite data
-        //No longer needed
-        //spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
-        //pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+        spriteDim = hexagon.GetComponent<SpriteRenderer>().size;//*5.5f;
+        pixelsPerUnit = hexagon.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         //Debug.Log(string.Format("Sprite Dimensions X:{0} , Y:{1}    PPU:{2}", spriteDim.x, spriteDim.y, pixelsPerUnit));
 
         //Needs to be changed later when adding more countries
@@ -120,10 +121,16 @@ public class SkillTree : MonoBehaviour
         nodeG.transform.SetParent(parent, false);
 
         //Check if previous Node is unlocked, otherwise lock
-        if (node.prev.law.active == false)
+        if (!country.enforcedLaws.Contains(node.law) && node.prev.law.name != "")
         {
             nodeG.GetComponent<Image>().color = Color.gray;
         }
+
+        if(node.prev.law.active && country.enforcedLaws.Contains(node.prev.law))
+        {
+            nodeG.GetComponent<Image>().color = Color.white;
+        }
+
 
         //If active law
         if (node.law.active || country.enforcedLaws.Contains(node.law))
@@ -202,7 +209,28 @@ public class SkillTree : MonoBehaviour
         //Updates the TMPro text elements
         massnahmeName.text = selectedNode.law.name;
         massnhameBesch.text = selectedNode.law.description;
+
+        //If parent is unlocked and not active
+        if(country.enforcedLaws.Contains(selectedNode.prev.law) && !selectedNode.law.active && !country.enforcedLaws.Contains(selectedNode.law))
+        {
+            einfuehrenButton.interactable = true;
+        }
+        else if (!country.enforcedLaws.Contains(selectedNode.prev.law) && selectedNode.prev.law.name != "")
+        {
+            einfuehrenButton.interactable = false;
+        }
+        else
+        {
+            einfuehrenButton.interactable = true;
+        }
+
+        
     }
 
+
+    public void Enforce()
+    {
+        country.EnforceLaw(GetNode(Country.laws[currentBranch], currentNode).law);
+    }
 
 }

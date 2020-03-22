@@ -6,10 +6,25 @@ using System.Linq;
 public class DemocraticCountry : Country
 {
 
+    bool enforcingLaw = false;
 
-    private IEnumerator StartLawProcess(Law law)
+    private IEnumerator StartLawProcess(@Law law)
     {
-        yield return new WaitForSeconds(Random.Range(50f / law.satisfaction, 100f / law.satisfaction));
+        enforcingLaw = true;
+        //Pick random satisfaction between two values
+        float satisfaction = Random.Range(law.satisfaction / 2f, law.satisfaction);
+        float count = 0;
+        float progress = 0f;
+        
+        while (count < satisfaction*100f)
+        {
+            count += 1;
+            progress = count / (satisfaction*100f);
+            Debug.Log(string.Format("Enforcing Law: {0}, Progress: {1}%", law.name, progress * 100f));
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        
         foreach (State state in states)
         {
             state.r0 -= law.r0Dampener;
@@ -17,19 +32,26 @@ public class DemocraticCountry : Country
             state.mt -= law.mtDampener;
         }
 
+        law.active = true;
         enforcedLaws.Add(law);
+        enforcingLaw = false;
     }
 
 
     public override void EnforceLaw(Law law)
     {
-        StartCoroutine(StartLawProcess(law));
+        Debug.Log(string.Format("Enforcing Law: {0}",law.name));
+        if (!enforcingLaw)
+        {
+            StartCoroutine(StartLawProcess(law));
+        }
+        
     }
 
     private void Start()
     {
         
-        Debug.Log("Population: " + population);
+        //Debug.Log("Population: " + population);
         var randomStateIndex = random.Next(states.Count);
         Debug.Log("Bundesland mit erstem Infiziertem: " + states[randomStateIndex].stateName);
         states[randomStateIndex].Infect();

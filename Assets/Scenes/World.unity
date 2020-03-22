@@ -185,7 +185,7 @@ SpriteRenderer:
   m_Size: {x: 25.6, y: 14.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &24538806
@@ -396,6 +396,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &114923477
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -607,6 +608,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &128344718
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -819,6 +821,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &179078142
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1109,6 +1112,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &211119505
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1769,6 +1773,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &459189468
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2192,6 +2197,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &586303676
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2373,7 +2379,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597680630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1251439985}
+        m_MethodName: Enforce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597680630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,6 +2776,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &732638912
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3161,6 +3179,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &740555258
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3398,7 +3417,7 @@ MonoBehaviour:
   paused: 0
   menu: 0
   countryStats: {fileID: 1797363585}
-  sideStats: {fileID: 1881871159}
+  sideStats: {fileID: 0}
   selectedCountry: {fileID: 0}
   state: {fileID: 0}
 --- !u!4 &767808191
@@ -5154,6 +5173,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1148041413
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5596,6 +5616,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1222791887
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6017,6 +6038,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1225766065
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6250,6 +6272,7 @@ MonoBehaviour:
   currentNode: 
   massnahmeName: {fileID: 411909899}
   massnhameBesch: {fileID: 945146284}
+  einfuehrenButton: {fileID: 597680629}
   actionMenu: {fileID: 2026021554}
 --- !u!1 &1276055935
 GameObject:
@@ -6369,6 +6392,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1276055939
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6533,6 +6557,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1292760243
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7157,6 +7182,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1523248364
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7435,6 +7461,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1526182826
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8017,6 +8044,7 @@ MonoBehaviour:
   deadThreshold: 0.1
   r0: 2.7
   isolation: 1
+  mt: 1
 --- !u!60 &1700815586
 PolygonCollider2D:
   m_ObjectHideFlags: 0
