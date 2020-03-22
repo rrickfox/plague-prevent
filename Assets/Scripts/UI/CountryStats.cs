@@ -14,7 +14,7 @@ public class CountryStats : MonoBehaviour
 
     private void Start()
     {
-        SelectCountry(null);
+        SelectState(null);
         UpdateStats();
     }
 
@@ -24,14 +24,13 @@ public class CountryStats : MonoBehaviour
         UpdateStats();
     }
 
-    public void SelectCountry(State state)
+    public void SelectState(State state)
     {
         this.state = state;
         if (state == null)
             countryName.SetText(world.countryName);
         else
             countryName.SetText(state.stateName);
-        
     }
 
     private void UpdateStats()
