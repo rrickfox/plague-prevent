@@ -102,6 +102,21 @@ public class SkillTree : MonoBehaviour
         return toReturn;
     }
 
+    //Does the country enforce this law 
+    private int Enforces(string name)
+    {
+        int index = 0;
+        foreach(Law law in country.enforcedLaws)
+        {
+            if (law.name == name)
+            {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
 
 
     //Recursive function that creates the node gameobject from a LawNode
@@ -121,19 +136,19 @@ public class SkillTree : MonoBehaviour
         nodeG.transform.SetParent(parent, false);
 
         //Check if previous Node is unlocked, otherwise lock
-        if (!country.enforcedLaws.Contains(node.law) && node.prev.law.name != "")
+        if (Enforces(node.law.name) == -1 && node.prev.law.name != "")//(!country.enforcedLaws.Contains(node.law) && node.prev.law.name != "")
         {
             nodeG.GetComponent<Image>().color = Color.gray;
         }
-
-        if(node.prev.law.active && country.enforcedLaws.Contains(node.prev.law))
+        //Previous is unlocked -> set to white
+        if (Enforces(node.prev.law.name) != -1)//(country.enforcedLaws.Contains(node.prev.law))
         {
             nodeG.GetComponent<Image>().color = Color.white;
         }
 
 
         //If active law
-        if (node.law.active || country.enforcedLaws.Contains(node.law))
+        if (Enforces(node.law.name) != -1)//(country.enforcedLaws.Contains(node.law))
         {
             nodeG.GetComponent<Image>().color = Color.cyan;
         }
@@ -210,12 +225,13 @@ public class SkillTree : MonoBehaviour
         massnahmeName.text = selectedNode.law.name;
         massnhameBesch.text = selectedNode.law.description;
 
-        //If parent is unlocked and not active
-        if(country.enforcedLaws.Contains(selectedNode.prev.law) && !selectedNode.law.active && !country.enforcedLaws.Contains(selectedNode.law))
+        //If enforced button should be disabled
+        if(Enforces(selectedNode.law.name) != -1)
         {
-            einfuehrenButton.interactable = true;
+            einfuehrenButton.interactable = false;
         }
-        else if (!country.enforcedLaws.Contains(selectedNode.prev.law) && selectedNode.prev.law.name != "")
+        //If previous is not enforced it should be disabled
+        else if (Enforces(selectedNode.prev.law.name) == -1 && selectedNode.prev.law.name != "")
         {
             einfuehrenButton.interactable = false;
         }
@@ -230,7 +246,17 @@ public class SkillTree : MonoBehaviour
 
     public void Enforce()
     {
+        //Enforce the law
         country.EnforceLaw(GetNode(Country.laws[currentBranch], currentNode).law);
+        UpdateSelected(currentNode);
+
+
+        //Visually enable all subnodes
+        foreach(LawNode node in GetNode(Country.laws[currentBranch], currentNode).subNode)
+        {
+            GameObject.Find(node.law.name).GetComponent<Image>().color = Color.white;
+        }
+        
     }
 
 }
