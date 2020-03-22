@@ -7,15 +7,20 @@ public struct Law
 {
     public string name;             //Name of the law
     public int satisfaction;        //How happy the civilians are with this law
-    public float dampener;          //Dampening effect of this law on the infection rate of the disease
+    //public float dampener;         //Dampening effect of this law on the infection rate of the disease
     public bool active;             //Whether the law is active
     public string description;      //A description of the law
+    public float isolationDampener; //Dampening effect of this law on isolation
+    public float r0Dampener;        //Dampening effect of this law on r0
+    public float mtDampener;        //Dampening effect of this law on mt
 
-    public Law(string name, int satisfaction, float dampener, string description, bool active=false)
+    public Law(string name, int satisfaction, float isolationDampener, float r0Dampener, float mtDampener, string description, bool active=false)
     {
         this.name = name;
         this.satisfaction = satisfaction;
-        this.dampener = dampener;
+        this.isolationDampener = isolationDampener;
+        this.r0Dampener = r0Dampener;
+        this.mtDampener = mtDampener;
         this.active = active;
         this.description = description;
     }
@@ -38,7 +43,7 @@ public class LawNode
         }
         else
         {
-            law = new Law("none", 0, 0f, "", true);
+            law = new Law("none", 0, 0f,0f,0f, "", true);
         }
         
     }
@@ -89,4 +94,5 @@ public class LawNode
             node.UpdateChildIndex();
         }
     }
+
 }

@@ -185,7 +185,7 @@ SpriteRenderer:
   m_Size: {x: 25.6, y: 14.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &24538806
@@ -2379,7 +2379,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597680630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1251439985}
+        m_MethodName: Enforce
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597680630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,7 +2518,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605924412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4fbbe884c55ce147ac34542f006ae5f, type: 3}
   m_Name: 
@@ -3310,8 +3321,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766795757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.54, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1292760240}
   - {fileID: 740555255}
@@ -3408,7 +3419,7 @@ MonoBehaviour:
   paused: 0
   menu: 0
   countryStats: {fileID: 1797363585}
-  sideStats: {fileID: 1881871159}
+  sideStats: {fileID: 0}
   selectedCountry: {fileID: 0}
   state: {fileID: 0}
 --- !u!4 &767808191
@@ -6263,6 +6274,7 @@ MonoBehaviour:
   currentNode: 
   massnahmeName: {fileID: 411909899}
   massnhameBesch: {fileID: 945146284}
+  einfuehrenButton: {fileID: 597680629}
   actionMenu: {fileID: 2026021554}
 --- !u!1 &1276055935
 GameObject:
