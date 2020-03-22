@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public GameObject mainMenu;
+    public GameObject settingsMenu;
     public GameObject diseaseMenu;
     public GameObject diseaseInfo;
     public GameObject countryMenu;
@@ -27,6 +28,16 @@ public class Menu : MonoBehaviour
     public void ToMainMenu()
     {
         mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+        diseaseMenu.SetActive(false);
+        diseaseInfo.SetActive(false);
+        countryMenu.SetActive(false);
+    }
+
+    public void ToSettingsMenu()
+    {
+        mainMenu.SetActive(false);
+        settingsMenu.SetActive(true);
         diseaseMenu.SetActive(false);
         diseaseInfo.SetActive(false);
         countryMenu.SetActive(false);
@@ -35,6 +46,7 @@ public class Menu : MonoBehaviour
     public void ToDiseaseMenu()
     {
         mainMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         diseaseMenu.SetActive(true);
         diseaseInfo.SetActive(false);
         countryMenu.SetActive(false);
@@ -43,6 +55,7 @@ public class Menu : MonoBehaviour
     public void ToDiseaseInfo()
     {
         mainMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         diseaseMenu.SetActive(false);
         diseaseInfo.SetActive(true);
         countryMenu.SetActive(false);
@@ -51,6 +64,7 @@ public class Menu : MonoBehaviour
     public void ToCountryMenu()
     {
         mainMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         diseaseMenu.SetActive(false);
         diseaseInfo.SetActive(false);
         countryMenu.SetActive(true);
