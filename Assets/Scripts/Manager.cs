@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class Manager : MonoBehaviour
 {
+    public static Manager Instance { get; private set; }
+
     public bool paused;
     public bool menu;
     public bool action;
@@ -16,6 +18,16 @@ public class Manager : MonoBehaviour
     public Graph graph;
     public GameObject selectedCountry;
     public State state;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
 
     void Update()
     {

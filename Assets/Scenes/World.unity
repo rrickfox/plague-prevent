@@ -14365,6 +14365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4cd1d31a827684fbe2bb9c5faba5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 1027501547}
   panel: {fileID: 166346733}
   titleText: {fileID: 1866798051}
   messageText: {fileID: 1638983532}

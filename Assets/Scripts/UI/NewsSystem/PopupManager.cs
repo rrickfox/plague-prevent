@@ -7,11 +7,15 @@ public class PopupManager : MonoBehaviour
 {
     public static PopupManager Instance { get; private set; }
 
+    public GameObject gameUI;
     public GameObject panel;
     public TMP_Text titleText;
     public TMP_Text messageText;
 
     public AnimationCurve animCurve;
+
+    private Queue<NewsClass> queue = new Queue<NewsClass>();
+    private bool activePopup;
 
     private void Awake()
     {
@@ -29,14 +33,28 @@ public class PopupManager : MonoBehaviour
         panel.SetActive(false);
     }
 
+    private void Update()
+    {
+        if(gameUI.activeSelf && queue.Count > 0)
+        {
+            if (!activePopup)
+            {
+                ShowPopup(queue.Dequeue());
+            }
+        }
+    }
+
     public void Popup(string title, string message)
     {
-        titleText.text = title;
-        messageText.text = message;
-        StartCoroutine(AnimatePopupCustom(1f, 2f));
+        queue.Enqueue(new NewsClass(title, message));
     }
 
     public void Popup(NewsClass news)
+    {
+        queue.Enqueue(news);
+    }
+
+    public void ShowPopup(NewsClass news)
     {
         titleText.text = news.title;
         messageText.text = news.message;
@@ -45,6 +63,7 @@ public class PopupManager : MonoBehaviour
 
     IEnumerator AnimatePopupLinear(float animTime, float seconds)
     {
+        activePopup = true;
         panel.transform.localScale = Vector3.zero;
         panel.SetActive(true);
         for (float i = 0; i <= 1; i += 1 / (animTime * 50))
@@ -62,10 +81,12 @@ public class PopupManager : MonoBehaviour
         }
 
         panel.SetActive(false);
+        activePopup = false;
     }
 
     IEnumerator AnimatePopupCustom(float animTime, float seconds)
     {
+        activePopup = true;
         panel.transform.localScale = Vector3.zero;
         panel.SetActive(true);
         for (float i = 0; i <= 1; i += 1 / (animTime * 50))
@@ -85,5 +106,6 @@ public class PopupManager : MonoBehaviour
         }
 
         panel.SetActive(false);
+        activePopup = false;
     }
 }
